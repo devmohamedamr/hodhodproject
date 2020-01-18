@@ -8,6 +8,7 @@ use App\Slider;
 use App\Blog;
 use App\Section;
 use App\Menu;
+use App\MenuSection;
 
 
 class HomeController extends Controller
@@ -22,10 +23,10 @@ class HomeController extends Controller
         //    echo $post->getTranslatedAttribute('blog_title', 'en');
         // }
 
-        $favoriteSection = Section::withTranslations()->get();
+        $favoriteSection = Section::withTranslations()->where('section_favorite',1)->get();
+
 
         $favoriteMenu = Menu::withTranslations()->where('favorite',1)->first();
-        //  dd($favoriteMenu);
 
         // $favoriteSection = DB::table('sections')->where('language_iso',"$lang")->where('section_favorite',1)->get();
 
@@ -46,12 +47,26 @@ class HomeController extends Controller
 
     public function menuBySection($lang,$Section_id){
         \App::setLocale($lang);
+        $menusectoion = MenuSection::all();
+        $menus = Menu::withTranslations()->get();
 
-        return view('front.menu',['lang'=>$lang]);
+        // dd($menusectoion);
+        return view('front.menu',['lang'=>$lang,'menusection'=>$menusectoion,'menus'=>$menus]);
 
     }
 
     public function menuDetails($lang,$menu_id){
         \App::setLocale($lang);
+    }
+
+
+    public function menubycontry($lang,$contry_id){
+        \App::setLocale($lang);
+        $menus = Menu::withTranslations()->where('menu_category',$contry_id)->get();
+        $menusectoion = MenuSection::all();
+
+        // echo $contry_id;
+        // dd($menu);
+        return view('front.menucontry',['lang'=>$lang,'menusection'=>$menusectoion,'menus'=>$menus]);
     }
 }

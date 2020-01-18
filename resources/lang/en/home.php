@@ -49,7 +49,7 @@ return [
     'FROM_BLOG'=>'FROM THE BLOG',
     'Some_Words'=>'Some Words',
     'FROM_CUSTOMERS'=>'FROM CUSTOMERS',
-    ''=>'',
+    'selectmenu'=>'Select Menu',
     ''=>'',
     ''=>'',
     ''=>'',
