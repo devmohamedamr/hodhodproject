@@ -10,13 +10,11 @@ class Menu extends Model
 {
     protected $table = "menu";
 
+    use Translatable;
+    protected $translatable = ['menu_title', 'menu_description'];
+
     public function menuSection(){
         return $this->belongsToMany(Section::class);
-
-    }
-
-    public function menuLanguage(){
-        return $this->belongsToMany(language::class);
 
     }
 

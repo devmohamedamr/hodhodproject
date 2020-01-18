@@ -9,11 +9,6 @@ use TCG\Voyager\Traits\Translatable;
 class Section extends Model
 {
     protected $table = "sections";
-
-
-    public function languageIso(){
-        return $this->belongsToMany(language::class);
-    }
-
-
+    use Translatable;
+    protected $translatable = ['section_name', 'section_description'];
 }

@@ -32,7 +32,7 @@ background:none;
 z-index: 6667;
 position:absolute;
  width:100%;
- 
+
 // set animation
 -webkit-transition: all 0.4s ease;
 transition: all 0.4s ease;
@@ -40,7 +40,7 @@ transition: all 0.4s ease;
 
 .header-two.sticky{
 position: fixed;
-min-height: 64px; 
+min-height: 64px;
 width: 100%;
 background: #fff;
 top:0px;
@@ -52,7 +52,10 @@ border-bottom:solid 1px #F3F3F3;
 .header-two.sticky .nav ul li.select-item a { color: #222; border-bottom: solid 1px #222;}
 .header-two.sticky .nav ul li.select-item a:hover{color: #222; border-bottom: solid 1px #222;}
 .header-two.sticky .logo2{ display:none;}
-.header-two.sticky .logo-dark{ display:inline-block; width:130px; float:left; margin: 8px 0 0 0;}
+.header-two.sticky .logo-dark{     display: inline-block;
+    width: 100px;
+    float: left;
+    margin: 0px 0 0 0;}
 .header-two.sticky .nav ul li a { color: #222; line-height: 58px;}
 .header-two.sticky .nav ul li a:hover{ color: #e9b947;}
 .header-two.sticky .social-icons li a{ color: #444;}

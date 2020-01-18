@@ -210,7 +210,9 @@ img:hover {transition: background-color 0.5s ease; }
 
 /*..... HEADER TWO ......*/
 
-.header-two .logo2{ width:158px; float:left; margin:25px 26px 0 0;}
+.header-two .logo2{ width: 132px;
+    float: left;
+    margin: 6px 26px 0 0;}
 .header-two .logo-dark{ display:none;}
 .header-two .nav{ float:left;}
 .header-two .nav ul li{ float:left;}

@@ -10,8 +10,11 @@ class MenuSection extends Model
 {
     protected $table = "menu_section";
 
-    public function languageIso(){
-        return $this->belongsToMany(language::class);
+    use Translatable;
+    protected $translatable = ['section_title', 'section_description'];
 
-    }
+    // public function languageIso(){
+    //     return $this->belongsToMany(language::class);
+
+    // }
 }

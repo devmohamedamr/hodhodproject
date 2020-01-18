@@ -214,14 +214,10 @@
             </ol>
             <div class="carousel-inner">
                 @foreach($sliders as $Slider)
-              <div class="carousel-item @if($Slider->id == 1) active @endif">
+              <div class="carousel-item @if($Slider->id == 3) active @endif">
                 <img class="d-block w-100" src="{{asset('storage/'.$Slider->slider_img)}}" alt="Third slide">
                 <div class="carousel-caption">
-                    @if($lang == 'ar')
-                    {!! $Slider->slider_content_ar !!}
-                    @else
-                    {!! $Slider->slider_content_en !!}
-                    @endif
+                    {{$Slider->getTranslatedAttribute('slider_content', $lang)}}
                   </div>
             </div>
             @endforeach
@@ -403,8 +399,8 @@
 							</div>
 
 							<div class="food-detail">
-                            <span class="title">{{$favoriteMenu->menu_title}}<span class="price">${{$favoriteMenu->menu_price}}</span></span>
-                            <span class="tags">{!! $favoriteMenu->menu_description !!}</span>
+                            <span class="title">{{$favoriteMenu->getTranslatedAttribute('menu_title', $lang)}}<span class="price">${{$favoriteMenu->menu_price}}</span></span>
+                            <span class="tags">{!! $favoriteMenu->getTranslatedAttribute('menu_description', $lang) !!}</span>
 							</div>
 
 							</div>
@@ -528,12 +524,12 @@
 
                <div id="owl-demo" class="owl-carousel">
                 @foreach($blogs as $blog)
-                <?php $clerestring =  strip_tags($blog->blog_content); ?>
+                <?php $clerestring =  strip_tags($blog->getTranslatedAttribute('blog_content', $lang)); ?>
                <div class="post item">
                <img class="lazyOwl" src="{{asset("storage/$blog->blog_img")}}" alt="">
                        <div class="detail">
                            <img src="images/news-cheff1.jpg" alt="">
-                       <h5><a href="{{url("$lang/blog/$blog->id")}}">{{$blog->blog_title}}</a></h5>
+                       <h5><a href="{{url("$lang/blog/$blog->id")}}">{{$blog->getTranslatedAttribute('blog_title', $lang)}}</a></h5>
                        <p>{{\Illuminate\Support\Str::limit($clerestring, 150, $end='...')}}</p>
                            <span><i class="icon-clock"></i>{{$blog->created_at}}</span>
                        </div>

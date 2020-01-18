@@ -10,7 +10,8 @@ class Blog extends Model
 {
     protected $table = "blog";
 
-    public function languageIso(){
-        return $this->belongsToMany(language::class);
-    }
+    use Translatable;
+    protected $translatable = ['blog_title','blog_content'];
+
+
 }
