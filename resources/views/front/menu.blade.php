@@ -261,7 +261,7 @@
 								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info">{{__('home.selectmenu')}}</button>
+                                <button type="button" data-toggle="modal" data-target="#menusection" class="btn btn-info">{{__('home.selectmenu')}}</button>
                             </div>
 						</div>
 					</div>
@@ -269,7 +269,7 @@
 				</div>
 			</div>
         </div>
-        <div class="modal" id="myModal">
+        <div class="modal" id="menusection" style="margin-top:80px">
             <div class="modal-dialog">
               <div class="modal-content">
 
@@ -281,7 +281,35 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                  Modal body..
+
+                    <form action="/action_page.php" method="post">
+                        <div class="form-group">
+                          <label for="email">{{__('form.name')}}</label>
+                          <input type="email" class="form-control" placeholder="Enter email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">{{__('fomr.address')}}</label>
+                            <input type="email" class="form-control" placeholder="Enter email" id="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">{{__('form.phone')}}</label>
+                            <input type="email" class="form-control" placeholder="Enter email" id="email">
+                          </div>
+                        <div class="form-group">
+                          <label for="pwd">{{__('form.email')}}</label>
+                          <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputState">{{__('form.section_service')}}</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">send</button>
+                      </form>
+
                 </div>
 
                 <!-- Modal footer -->
@@ -292,9 +320,6 @@
               </div>
             </div>
           </div>
-
-		<!--End The Menu-->
-
 	</div>
    <!--End Content-->
 

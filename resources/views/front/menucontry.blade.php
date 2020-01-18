@@ -289,25 +289,25 @@
         <!-- Modal body -->
         <div class="modal-body">
 
-            <form action="/action_page.php">
+            <form action="/action_page.php" method="post">
                 <div class="form-group">
-                  <label for="email">Email address:</label>
+                  <label for="email">{{__('form.name')}}</label>
                   <input type="email" class="form-control" placeholder="Enter email" id="email">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email address:</label>
+                    <label for="email">{{__('fomr.address')}}</label>
                     <input type="email" class="form-control" placeholder="Enter email" id="email">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email address:</label>
+                    <label for="email">{{__('form.phone')}}</label>
                     <input type="email" class="form-control" placeholder="Enter email" id="email">
                   </div>
                 <div class="form-group">
-                  <label for="pwd">Password:</label>
+                  <label for="pwd">{{__('form.email')}}</label>
                   <input type="password" class="form-control" placeholder="Enter password" id="pwd">
                 </div>
                 <div class="form-group">
-                    <label for="inputState">State</label>
+                    <label for="inputState">{{__('form.section_service')}}</label>
                     <select id="inputState" class="form-control">
                       <option selected>Choose...</option>
                       <option>...</option>
