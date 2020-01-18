@@ -261,14 +261,38 @@
 								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
-                            <button class="btn btn-info">{{__('home.selectmenu')}}</button>
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info">{{__('home.selectmenu')}}</button>
                             </div>
 						</div>
 					</div>
                     @endforeach
 				</div>
 			</div>
-		</div>
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Modal Heading</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
 		<!--End The Menu-->
 
 	</div>
