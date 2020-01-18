@@ -213,10 +213,10 @@ img:hover {transition: background-color 0.5s ease; }
 
 /*..... HEADER TWO ......*/
 
-.header-two .logo2{ width:158px; float:left; margin:25px 26px 0 0;}
+.header-two .logo2{ width:158px; float:right; margin:25px 26px 0 0;}
 .header-two .logo-dark{ display:none;}
-.header-two .nav{ float:left;}
-.header-two .nav ul li{ float:left;}
+.header-two .nav{ float:right;}
+.header-two .nav ul li{ float: right;}
 .header-two .nav ul li a{ color: #fff; text-transform: uppercase; font-weight: 400; font-size: 14px; font-family: 'hanimation';
  padding: 0px 0;
  margin: 0 14px; line-height: 102px;}

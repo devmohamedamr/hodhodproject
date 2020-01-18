@@ -32,7 +32,7 @@ background:none;
 z-index: 6667;
 position:absolute;
  width:100%;
-
+ 
 // set animation
 -webkit-transition: all 0.4s ease;
 transition: all 0.4s ease;
@@ -40,7 +40,7 @@ transition: all 0.4s ease;
 
 .header-two.sticky{
 position: fixed;
-min-height: 64px;
+min-height: 64px; 
 width: 100%;
 background: #fff;
 top:0px;

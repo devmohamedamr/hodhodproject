@@ -16,7 +16,7 @@ class HomeController extends Controller
         $favoriteSection = DB::table('sections')->where('language_iso',"$lang")->where('section_favorite',1)->get();
 
         $favoriteMenu = DB::table('menu')->where('menu_language',"$lang")->where('favorite',1)->first();
-        // dd($favoriteMenu);
+
         $sliders = Slider::all();
         return view('front.layout',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection]);
     }
@@ -31,6 +31,9 @@ class HomeController extends Controller
 
     public function menuBySection($lang,$Section_id){
         \App::setLocale($lang);
+
+        return view('front.menu',['lang'=>$lang]);
+
     }
 
     public function menuDetails($lang,$menu_id){

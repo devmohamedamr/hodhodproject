@@ -28,7 +28,7 @@
 	<link href="{{asset('front/css/dropmenu.css')}}" rel="stylesheet" type="text/css">
 
 	<!--Sticky Header-->
-	<link href="{{asset('front/css/sticky-header.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{asset("front/css/sticky-header-$lang.css")}}" rel="stylesheet" type="text/css">
 
 	<!--Sticky Countdown-->
 	<link href="{{asset('front/css/countdown.css')}}" rel="stylesheet" type="text/css">
@@ -84,7 +84,7 @@
 	   		<a href="index.html"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
 			<a href="index.html"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
 
-			<div class="cont-left ">
+			<div class="cont-right ">
 
             <nav class="menu-5 nav">
             	<ul class="wtf-menu">
@@ -142,11 +142,6 @@
                 </ul>
             </nav>
 
-			{{-- <ul class="social-icons">
-				<li><a href="#."><i class="icon-facebook-1"></i></a></li>
-				<li><a href="#."><i class="icon-twitter-1"></i></a></li>
-				<li><a href="#."><i class="icon-google"></i></a></li>
-			</ul> --}}
 			</div>
 		</div>
 

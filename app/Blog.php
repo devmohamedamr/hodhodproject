@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Translatable;
 
 
 class Blog extends Model
@@ -11,6 +12,5 @@ class Blog extends Model
 
     public function languageIso(){
         return $this->belongsToMany(language::class);
-
     }
 }
