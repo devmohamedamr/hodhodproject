@@ -55,6 +55,8 @@
     <!--switcher-->
 	<link href="{{asset('front/css/switcher.css')}}" rel="stylesheet" type="text/css">
 
+    <link href="{{asset('front/css/customestyle.css')}}" rel="stylesheet" type="text/css">
+
 </head>
 
   <body>
@@ -87,7 +89,7 @@
 			<div class="cont-right ">
 
             <nav class="menu-5 nav">
-            	<ul class="wtf-menu">
+            	<ul class="wtf-menu menurtl">
                 <li class="select-item"><a href="#.">{{__("home.home")}}</a>
 					</li>
 
@@ -161,40 +163,55 @@
 
 			<nav id="menu">
 				<ul>
-					<li class="select"><a href="#.">Home</a>
-                    	<ul>
-							<li class="select"> <a href="index.html">Home Page 1</a> </li>
-							<li> <a href="index2.html">Home Page 2</a> </li>
+                    <li class="select-item"><a href="#.">{{__("home.home")}}</a>
+					</li>
+
+					<li><a href="#.">{{__("home.party")}}</a>
+						<ul class="submenu">
+                        <li> <a href="{{$lang}}/menu/1">{{__("home.Buffets")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/2">{{__("home.Barbecue")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/3">{{__("home.Arabic_cooking")}}</a> </li>
+						</ul>
+					</li>
+
+                    <li><a href="#.">{{__("home.Subsistence")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/4">{{__("home.Hot")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/5">{{__("home.Dry")}}</a> </li>
 						</ul>
                     </li>
-					<li><a href="#.">Fresh Menu</a>
-                    	<ul>
-                        	<li> <a href="menu.html">Menu 1</a> </li>
-							<li> <a href="menu2.html">Menu 2</a> </li>
-							<li> <a href="menu3.html">Menu 3</a> </li>
+
+                    <li><a href="#.">{{__("home.Rations_services")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/6">{{__("home.Missions")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/7">{{__("home.Consulates")}}</a> </li>
+                            <li> <a href="{{$lang}}/menu/8">{{__("home.Tourism_companies")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/9">{{__("home.Governmental_ministries")}}</a> </li>
+
                         </ul>
                     </li>
 
-					<li><a href="our-story.html">Our Story</a></li>
-
-
-                    <li><a href="#.">Blog</a>
-                    	<ul>
-                        	<li> <a href="blog.html">Blog 1</a> </li>
-							<li> <a href="blog2.html">Blog 2</a> </li>
-                        </ul>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/10">{{__("home.Pilgrims_inside")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/11">{{__("home.Raft_institutions")}}</a> </li>
+						</ul>
                     </li>
 
-					<li><a href="#.">Contact Us</a>
-                    	<ul>
-                        	<li> <a href="contact-us.html">Contact-us 1</a> </li>
-							<li> <a href="contact-us2.html">Contact-us 2</a> </li>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/12">{{__("home.Charitable_section")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/13">{{__("home.The_way")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/14">{{__("home.Breakfast_fasting")}}</a> </li>
+
                         </ul>
                     </li>
+                    <li><a href="{{$lang}}/about">{{__("home.About_company")}}</a>
 
-					<li><a href="shop.html">Order Online</a></li>
-					<li><a href="#book-table">Book a Table</a></li>
 
+                    <li><a href="{{$lang}}/callus">{{__("home.call_us")}}</a>
+
+					</li>
 
 				</ul>
 
@@ -206,33 +223,23 @@
 
 
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                @foreach($sliders as $Slider)
-              <div class="carousel-item @if($Slider->id == 3) active @endif">
-                <img class="d-block w-100" src="{{asset('storage/'.$Slider->slider_img)}}" alt="Third slide">
-                <div class="carousel-caption">
-                    {{$Slider->getTranslatedAttribute('slider_content', $lang)}}
-                  </div>
-            </div>
-            @endforeach
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+	<!--Start Sub Banner-->
+    <div class="sub-banner" style="height: 600px;color: wheat">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="detail">
+                        {!! $sliders->getTranslatedAttribute('slider_content', $lang) !!}					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+        <img src="{{asset('storage/'.$sliders->slider_img)}}" width="100%" height="600px">
+        </div>
+   </div>
+   <div class="wave"></div>
 
-
+   <!--End Sub Banner-->
 
    <!--Start Content-->
    <div class="content">

@@ -4,3 +4,105 @@
     border-radius: 50%;
     text-align: center;
 }
+
+
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+    .header-two .logo2{
+        width: 100px;
+        float: left;
+        margin: 6px 26px 0 0;
+    }
+
+    .header-two.sticky .logo-dark{
+        display: inline-block;
+        width: 100px;
+        float: left;
+        margin: 0px 0 0 0;
+    }
+
+    .customer-words{
+        background-image: url(../images/testimonials-bg.jpg);
+        /* background-size: cover; */
+        height: 883px;
+        width: 100%;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    .upcoming-event{
+
+        background-image: url(../images/event-bg.jpg);
+        /* background-size: cover; */
+        height: 883px;
+        width: 100%;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    .footer .about-pearl .newsletter input[type=text]{
+        background: #fff;
+        border: solid 2px #444444;
+        color: #6c6c6c;
+        font-size: 16px;
+        height: 45px;
+        width: 277px;
+        padding: 0 15px;
+        float: left;
+    }
+}
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+
+    .header-two .logo2{
+        width: 100px;
+        float: left;
+        margin: 6px 26px 0 0;
+    }
+
+    .header-two.sticky .logo-dark{
+        display: inline-block;
+        width: 100px;
+        float: left;
+        margin: 0px 0 0 0;
+    }
+
+    .upcoming-event{
+
+        background-image: url(../images/event-bg.jpg);
+        /* background-size: cover; */
+        height: 883px;
+        width: 100%;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    .customer-words{
+    background-image: url(../images/testimonials-bg.jpg);
+    /* background-size: cover; */
+    height: 883px;
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
+    }
+
+    .footer .about-pearl .newsletter input[type=text]{
+        background: #fff;
+        border: solid 2px #444444;
+        color: #6c6c6c;
+        font-size: 16px;
+        height: 45px;
+        width: 277px;
+        padding: 0 15px;
+        float: left;
+    }
+
+}
+

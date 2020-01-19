@@ -213,7 +213,7 @@ img:hover {transition: background-color 0.5s ease; }
 
 /*..... HEADER TWO ......*/
 
-.header-two .logo2{ width: 132px;
+.header-two .logo2{ width: 100px;
     float: right;
     margin: 6px 26px 0 0;}
 .header-two .logo-dark{ display:none;}
@@ -1034,10 +1034,9 @@ form#newsletter_form .error { border: solid 2px #F77070 !important;}
 
 .get-touch-form .success_msg{font-family: 'hanimation';
  font-size:22px; margin:12px 0 0 0; color: #b50c0a;  position: absolute; left:0; text-align:center; width:100%; }
-
-
-
-
+.menurtl{
+    text-align: right;
+}
 
 
 

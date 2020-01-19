@@ -1,7 +1,7 @@
 
 #page .header a
 {
-	
+
 	    display: block;
     width: 40px;
     height: 41px;
@@ -598,7 +598,7 @@ html.mm-opened.mm-dragging #mm-blocker {
   .mm-menu .mm-header .mm-next:after,
   .mm-menu .mm-header .mm-close:after {
     border-color: #fff; margin: -3px 6px 0 0; float: left;}
- 
+
 /*
 	jQuery.mmenu labels addon CSS
 */
@@ -1318,10 +1318,10 @@ html.mm-opened.mm-black .mm-page {
 
 a.demos{ background:#000 !important; opacity:1;}
 
-#page .header a{background-color:#E9B947 !important;}
+#page .header a{background-color:#b50c0a !important;}
 #page .header-two a{	background-color:rgba(255, 255, 255, 0) !important;     top: 26px !important;}
-#page .header-two.sticky a{background-color:#E9B947 !important; top:11px !important;}
-.mm-menu {  background: #E9B947 !important;}
+#page .header-two.sticky a{background-color:#b50c0a !important; top:11px !important;}
+.mm-menu {  background: #b50c0a !important;}
 
 
 

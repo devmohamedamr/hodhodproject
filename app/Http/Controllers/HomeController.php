@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         // $favoriteMenu = DB::table('menu')->where('menu_language',"$lang")->where('favorite',1)->first();
 
-        $sliders = Slider::withTranslations()->get();
+        $sliders = Slider::withTranslations()->first();
             // dd($sliders);
         return view('front.layout',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection]);
     }
