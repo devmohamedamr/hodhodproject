@@ -90,60 +90,22 @@
 
             <nav class="menu-5 nav">
             	<ul class="wtf-menu menurtl">
-                <li class="select-item"><a href="#.">{{__("home.home")}}</a>
-					</li>
-
-					<li><a href="#.">{{__("home.party")}}</a>
-						<ul class="submenu">
-                        <li> <a href="{{$lang}}/menu/1">{{__("home.Buffets")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/2">{{__("home.Barbecue")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/3">{{__("home.Arabic_cooking")}}</a> </li>
-						</ul>
-					</li>
-
-                    <li><a href="#.">{{__("home.Subsistence")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/4">{{__("home.Hot")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/5">{{__("home.Dry")}}</a> </li>
-						</ul>
+                    @foreach($SectionMenu as $section)
+                    <li><a href="#.">{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
+                        @php
+                            $subSectionMenu = \App\SubSection::withTranslations()->where('section_id',$section->id)->get();
+                        @endphp
+                            @if(isset($subSectionMenu))
+                                    <ul class="submenu">
+                                        @foreach ($subSectionMenu as $subsectionmenulist)
+                                            <li> <a href="{{$lang}}/menu/{{$subsectionmenulist->id}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                        @endforeach
+                                    </ul>
+                            @endif
                     </li>
-
-                    <li><a href="#.">{{__("home.Rations_services")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/6">{{__("home.Missions")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/7">{{__("home.Consulates")}}</a> </li>
-                            <li> <a href="{{$lang}}/menu/8">{{__("home.Tourism_companies")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/9">{{__("home.Governmental_ministries")}}</a> </li>
-
-                        </ul>
-                    </li>
-
-                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/10">{{__("home.Pilgrims_inside")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/11">{{__("home.Raft_institutions")}}</a> </li>
-						</ul>
-                    </li>
-
-                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/12">{{__("home.Charitable_section")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/13">{{__("home.The_way")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/14">{{__("home.Breakfast_fasting")}}</a> </li>
-
-                        </ul>
-                    </li>
-                    <li><a href="{{$lang}}/about">{{__("home.About_company")}}</a>
-
-
-                    <li><a href="{{$lang}}/callus">{{__("home.call_us")}}</a>
-
-					</li>
-
-
+                    @endforeach
                 </ul>
             </nav>
-
 			</div>
 		</div>
 
@@ -316,7 +278,7 @@
 						</div>
 
 						<div class="col-md-6">
-							<img src="images/our-story.jpg" alt="">
+                        <img src="{{asset('front/images/our-story.jpg')}}" alt="">
 						</div>
 
 					</div>

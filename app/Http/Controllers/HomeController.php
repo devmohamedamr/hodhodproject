@@ -9,7 +9,7 @@ use App\Blog;
 use App\Section;
 use App\Menu;
 use App\MenuSection;
-
+use App\SubSection;
 
 class HomeController extends Controller
 {
@@ -23,6 +23,10 @@ class HomeController extends Controller
         //    echo $post->getTranslatedAttribute('blog_title', 'en');
         // }
 
+
+        $SectionMenu = Section::withTranslations()->get();
+
+        // dd($SectionMenu);
         $favoriteSection = Section::withTranslations()->where('section_favorite',1)->get();
 
 
@@ -34,7 +38,7 @@ class HomeController extends Controller
 
         $sliders = Slider::withTranslations()->first();
             // dd($sliders);
-        return view('front.layout',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection]);
+        return view('front.layout',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
     }
 
 
@@ -91,6 +95,6 @@ class HomeController extends Controller
        $message->from('onlineinterviewquestions@gmail.com');
        $message->to('sharadjaiswal1411@gmail.com', 'Admin')->subject($request->get('subject'));
     });
-    
+
     }
 }
