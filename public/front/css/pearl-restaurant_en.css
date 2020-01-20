@@ -216,7 +216,7 @@ img:hover {transition: background-color 0.5s ease; }
 .header-two .logo-dark{ display:none;}
 .header-two .nav{ float:left;}
 .header-two .nav ul li{ float:left;}
-.header-two .nav ul li a{ color: #fff; text-transform: uppercase; font-weight: 400; font-size: 14px; font-family: 'Raleway', sans-serif; padding: 0px 0;
+.header-two .nav ul li a{ color: #fff; text-transform: uppercase; font-weight: 400; font-size: 12px; font-family: 'Raleway', sans-serif; padding: 0px 0;
  margin: 0 14px; line-height: 102px;}
 .header-two .nav ul li.select-item a{ color: #FFFFFF; border-bottom: solid 1px #fff;}
 .header-two .get-touch{ float:right; margin:38px 0 0 0;}
