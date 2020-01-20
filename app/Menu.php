@@ -14,7 +14,7 @@ class Menu extends Model
     protected $translatable = ['menu_title', 'menu_description'];
 
     public function menuSection(){
-        return $this->belongsToMany(Section::class);
+        return $this->belongsToMany(SubSection::class);
 
     }
 

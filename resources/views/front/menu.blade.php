@@ -6,17 +6,7 @@
 
 		<!--Start The Menu-->
 		<div class="our-menu">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    @foreach($menusection as $section)
-                    <div class="col-md-1 mr-5">
-                        <a href="{{url("/$lang/menucontry/$section->id")}}">
-                            <img class="roundcountry" src="{{asset('storage/'.$section->menu_img)}}">
-                        </a>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
+
 			<div class="container p-4">
 				<div class="row">
                     @foreach($menus as $menu)

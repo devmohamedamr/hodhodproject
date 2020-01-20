@@ -54,15 +54,25 @@ class HomeController extends Controller
 
     public function menuBySection($lang,$Section_id){
         \App::setLocale($lang);
+
+        $Section_name =  str_replace('-', ' ', strtolower($Section_id));
+        // echo $Section_name;die;
+
+        $section_by_section_name = SubSection::withTranslations()->where('section_name',$Section_name)->first();
+        $section_id = $section_by_section_name['id'];
+        $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
         $menusectoion = MenuSection::all();
-        $menus = Menu::withTranslations()->get();
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
 
-        // dd($menusectoion);
-        return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+        if($section_id == 18 || $section_id == 19){
+            return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
 
+        }else{
+            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+
+        }
     }
 
     public function menuDetails($lang,$menu_id){
