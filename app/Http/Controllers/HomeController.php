@@ -24,7 +24,6 @@ class HomeController extends Controller
         // }
 
 
-        $SectionMenu = Section::withTranslations()->get();
 
         // dd($SectionMenu);
         $favoriteSection = Section::withTranslations()->where('section_favorite',1)->get();
@@ -35,27 +34,34 @@ class HomeController extends Controller
         // $favoriteSection = DB::table('sections')->where('language_iso',"$lang")->where('section_favorite',1)->get();
 
         // $favoriteMenu = DB::table('menu')->where('menu_language',"$lang")->where('favorite',1)->first();
+        $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
             // dd($sliders);
-        return view('front.layout',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
+        return view('front.home',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
     }
 
 
     public function blog($lang,$id){
         \App::setLocale($lang);
+        $SectionMenu = Section::withTranslations()->get();
+
+        $sliders = Slider::withTranslations()->first();
 
         $blogdetalis = DB::table('blog')->where('id', $id)->first();
-        return view('front.blogdetails',['lang'=>$lang,'blogdetalis'=>$blogdetalis]);
+        return view('front.blogdetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'blogdetalis'=>$blogdetalis]);
     }
 
     public function menuBySection($lang,$Section_id){
         \App::setLocale($lang);
         $menusectoion = MenuSection::all();
         $menus = Menu::withTranslations()->get();
+        $SectionMenu = Section::withTranslations()->get();
+
+        $sliders = Slider::withTranslations()->first();
 
         // dd($menusectoion);
-        return view('front.menu',['lang'=>$lang,'menusection'=>$menusectoion,'menus'=>$menus]);
+        return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
 
     }
 
@@ -68,16 +74,20 @@ class HomeController extends Controller
         \App::setLocale($lang);
         $menus = Menu::withTranslations()->where('menu_category',$contry_id)->get();
         $menusectoion = MenuSection::all();
+        $SectionMenu = Section::withTranslations()->get();
 
-        // echo $contry_id;
-        // dd($menu);
-        return view('front.menucontry',['lang'=>$lang,'menusection'=>$menusectoion,'menus'=>$menus]);
+        $sliders = Slider::withTranslations()->first();
+
+        return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
     }
 
     public function contact($lang){
         \App::setLocale($lang);
+        $SectionMenu = Section::withTranslations()->get();
 
-        return view('front.contact',['lang'=>$lang]);
+        $sliders = Slider::withTranslations()->first();
+
+        return view('front.contact',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu]);
     }
 
     public function contactsend(Request $request){

@@ -83,13 +83,15 @@
 	<div id="header-1">
        <header class="header-two">
 		   <div class="container">
-	   		<a href="index.html"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
-			<a href="index.html"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
+	   		<a href="/{{$lang}}"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
+			<a href="/{{$lang}}"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
 
 			<div class="cont-right ">
 
             <nav class="menu-5 nav">
             	<ul class="wtf-menu menurtl">
+                <li><a href="/{{$lang}}">{{__('home.home')}}</a>
+
                     @foreach($SectionMenu as $section)
                 <li><a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)))}}">{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
                         @php
@@ -124,60 +126,24 @@
 			</header>
 
 			<nav id="menu">
-				<ul>
-                    <li class="select-item"><a href="#.">{{__("home.home")}}</a>
-					</li>
+                <ul class="wtf-menu menurtl">
+                    <li><a href="/{{$lang}}">{{__('home.home')}}</a>
 
-					<li><a href="#.">{{__("home.party")}}</a>
-						<ul class="submenu">
-                        <li> <a href="{{$lang}}/menu/1">{{__("home.Buffets")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/2">{{__("home.Barbecue")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/3">{{__("home.Arabic_cooking")}}</a> </li>
-						</ul>
-					</li>
-
-                    <li><a href="#.">{{__("home.Subsistence")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/4">{{__("home.Hot")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/5">{{__("home.Dry")}}</a> </li>
-						</ul>
+                    @foreach($SectionMenu as $section)
+                <li><a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)))}}">{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
+                        @php
+                            $subSectionMenu = \App\SubSection::withTranslations()->where('section_id',$section->id)->get();
+                        @endphp
+                            @if(count($subSectionMenu)>0)
+                                    <ul class="submenu">
+                                        @foreach ($subSectionMenu as $subsectionmenulist)
+                                            <li> <a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)))}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                        @endforeach
+                                    </ul>
+                            @endif
                     </li>
-
-                    <li><a href="#.">{{__("home.Rations_services")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/6">{{__("home.Missions")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/7">{{__("home.Consulates")}}</a> </li>
-                            <li> <a href="{{$lang}}/menu/8">{{__("home.Tourism_companies")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/9">{{__("home.Governmental_ministries")}}</a> </li>
-
-                        </ul>
-                    </li>
-
-                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/10">{{__("home.Pilgrims_inside")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/11">{{__("home.Raft_institutions")}}</a> </li>
-						</ul>
-                    </li>
-
-                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
-						<ul class="submenu">
-							<li> <a href="{{$lang}}/menu/12">{{__("home.Charitable_section")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/13">{{__("home.The_way")}}</a> </li>
-							<li> <a href="{{$lang}}/menu/14">{{__("home.Breakfast_fasting")}}</a> </li>
-
-                        </ul>
-                    </li>
-                    <li><a href="{{$lang}}/about">{{__("home.About_company")}}</a>
-
-
-                    <li><a href="{{$lang}}/callus">{{__("home.call_us")}}</a>
-
-					</li>
-
-				</ul>
-
-
+                    @endforeach
+                </ul>
 			</nav>
 		</div>
 		</div>
@@ -203,337 +169,9 @@
 
    <!--End Sub Banner-->
 
+
+   @yield('content')
    <!--Start Content-->
-   <div class="content">
-
-
-		<!--Start Services-->
-		<div class="services">
-			<div class="container">
-
-				<div class="row">
-				<div class="col-md-12">
-					<div class="main-title">
-                    <span>{{__("home.Introduction")}}</span>
-					<h1>{{__("home.OUR_SERVICES")}}</h1>
-					<p>{{__("home.our_service_description")}}</p>
-					</div>
-				</div>
-				</div>
-
-				<div class="row">
-                    @foreach($favoriteSection as $fs)
-					<div class="col-md-4">
-						<div class="serv-main-sec">
-						<div class="service-sec-top-bg"></div>
-						<div class="service-sec">
-							<i class="{{$fs->section_img}}"></i>
-							<h6>{{$fs->section_name}}</h6>
-							<p>{!! $fs->section_description !!}</p>
-							<a href="menu3.html">read more</a>
-						</div>
-						<div class="service-sec-bottom-bg"></div>
-						</div>
-					</div>
-                    @endforeach
-				</div>
-
-			</div>
-		</div>
-		<!--End Services-->
-
-
-
-
-		<!--Start Master of Town-->
-		<div class="master-town">
-
-				<div class="parallax">
-					<div class="detail">
-                    <h1> {!! setting("slogan.$lang") !!} </h1>
-						{{-- <a href="http://themeforest.net/item/pearl-hotel-restaurant-template/14373573?ref=brighthemes" class="white-btn">Buy Now</a> --}}
-					</div>
-				</div>
-
-		</div>
-		<!--End Master of Town-->
-
-
-
-
-		<!--Start Our Stiry-->
-			<div class="our-story">
-				<div class="container">
-					<div class="row">
-
-						<div class="col-md-6">
-							<div class="story-detail">
-							<div class="main-title">
-                            <span>{{__('home.Discover')}}</span>
-								<h1>{{__('home.our_story')}}</h1>
-							</div>
-							<p>{!! setting("story.$lang") !!}.</p>
-							<a href="our-story.html" class="full-story">view full story</a>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-                        <img src="{{asset('front/images/our-story.jpg')}}" alt="">
-						</div>
-
-					</div>
-				</div>
-			</div>
-		<!--End Our Stiry-->
-
-
-
-
-		<!--Start Upcoming Event-->
-		<div class="upcoming-event">
-
-
-				<div class="parallax parallax-event">
-
-					<div class="detail">
-
-						<div class="container">
-
-						<div class="row">
-						<div class="col-md-12">
-							<div class="main-title-white">
-							<span>{{__('home.Dont_Miss')}}</span>
-							<h1>{{__('home.UPCOMING_EVENTS')}}</h1>
-							</div>
-						</div>
-						</div>
-
-
-						<ul id="example">
-							<li><span class="days">00</span><p class="days_text">Days</p></li>
-							<li class="seperator">:</li>
-							<li><span class="hours">00</span><p class="hours_text">Hours</p></li>
-							<li class="seperator">:</li>
-							<li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
-							<li class="seperator">:</li>
-							<li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
-						</ul>
-
-						<div class="event-detail">
-							<div class="row">
-
-								<div class="col-md-4">
-									<img src="images/event-img.jpg" alt="">
-								</div>
-
-								<div class="col-md-8">
-									<div class="event-text">
-										<h6>How to Properly Use Spices</h6>
-										<span><i class="icon-clock"></i> April 22, 2016 / 8:30 pm - 11:00 pm</span>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...  <a href="event-detail.html">Read More</a></p>
-										<a href="events.html" class="view-event">view all events</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-		</div>
-		<!--End Upcoming Event-->
-
-
-
-
-
-		<!--Start Today Food-->
-			<div class="today-food">
-				<div class="container">
-					<div class="row">
-
-						<div class="col-md-6">
-							<img src="{{asset("storage/$favoriteMenu->menu_img")}}" alt="">
-						</div>
-
-						<div class="col-md-6">
-							<div class="special-food">
-							<div class="main-title">
-                            <span>{{__('home.Todays')}}</span>
-								<h1>{{__('home.SPECIALS_FOOD')}}</h1>
-							</div>
-
-							<div class="food-detail">
-                            <span class="title">{{$favoriteMenu->getTranslatedAttribute('menu_title', $lang)}}<span class="price">${{$favoriteMenu->menu_price}}</span></span>
-                            <span class="tags">{!! $favoriteMenu->getTranslatedAttribute('menu_description', $lang) !!}</span>
-							</div>
-
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		<!--End Today Food-->
-
-
-
-
-
-		<!--Start Book Table-->
-		<div id="book-table"></div>
-		<div class="height35"></div>
-	<!--Start Customer Words-->
-    <div class="customer-words">
-
-        <div class="parallax parallax-customer-words">
-            <div class="detail">
-
-                <div class="main-title-white">
-                <span>{{__('home.Some_Words')}}</span>
-                <h1>{{__('home.FROM_CUSTOMERS')}}</h1>
-                </div>
-
-                <div id="testimonials">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-12">
-                            <div class="span12">
-
-                                <div id="owl-demo2" class="owl-carousel">
-
-                                <div class="testi-sec">
-                                <img src="images/testimonial-img1.jpg" alt="">
-                                <div class="height35"></div>
-                                <span class="name">Christian Stewart</span>
-                                <span class="work">Fashion Designer</span>
-                                <div class="height20"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. interdum hendrerit lacinia.</p>
-                                <div class="height20"></div>
-                                <div class="rating">
-                                    <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                                </div>
-                                </div>
-
-                                <div class="testi-sec">
-                                <img src="images/testimonial-img2.jpg" alt="">
-                                <div class="height35"></div>
-                                <span class="name">johny Bravo</span>
-                                <span class="work">TV Actor</span>
-                                <div class="height20"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. interdum hendrerit lacinia Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. </p>
-                                <div class="height20"></div>
-                                <div class="rating">
-                                    <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                                </div>
-                                </div>
-
-                                <div class="testi-sec">
-                                <img src="images/testimonial-img3.jpg" alt="">
-                                <div class="height35"></div>
-                                <span class="name">Rubica noi</span>
-                                <span class="work">Founder Photography</span>
-                                <div class="height20"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan.</p>
-                                <div class="height20"></div>
-                                <div class="rating">
-                                    <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                                </div>
-                                </div>
-
-
-                                </div>
-
-                            </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-</div>
-<!--End Customer Words-->
-		<!--End Book Table-->
-
-
-
-
-
-        <div class="latest-news">
-            <div class="container">
-
-             <div class="row">
-             <div class="col-md-12">
-
-                 <div class="main-title">
-                     <span>{{__('home.Latest_Posts')}}</span>
-                     <h1>{{__('home.FROM_BLOG')}}</h1>
-                 </div>
-
-             </div>
-             </div>
-
-
-
-
-             <div id="latest-news">
-         <div class="container">
-           <div class="row">
-            <div class="col-md-12">
-             <div class="span12">
-
-               <div id="owl-demo" class="owl-carousel">
-                @foreach($blogs as $blog)
-                <?php $clerestring =  strip_tags($blog->getTranslatedAttribute('blog_content', $lang)); ?>
-               <div class="post item">
-               <img class="lazyOwl" src="{{asset("storage/$blog->blog_img")}}" alt="">
-                       <div class="detail">
-                           <img src="images/news-cheff1.jpg" alt="">
-                       <h5><a href="{{url("$lang/blog/$blog->id")}}">{{$blog->getTranslatedAttribute('blog_title', $lang)}}</a></h5>
-                       <p>{{\Illuminate\Support\Str::limit($clerestring, 150, $end='...')}}</p>
-                           <span><i class="icon-clock"></i>{{$blog->created_at}}</span>
-                       </div>
-                   </div>
-               @endforeach
-               </div>
-
-             </div>
-           </div>
-           </div>
-         </div>
-
-     </div>
-
-
-
-         </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-	 </div>
-   <!--End Content-->
-
-
-
-
-
 
 
 	<!--Start Footer-->
