@@ -112,7 +112,11 @@
                                     </ul>
                             @endif
                     </li>
+
                     @endforeach
+                <li><a href={{url("$lang/about")}}>{{__('home.About_company')}}</a>
+                <li><a href={{url("$lang/contact")}}>{{__('home.call_us')}}</a>
+
                 </ul>
             </nav>
 			</div>

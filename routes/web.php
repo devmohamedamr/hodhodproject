@@ -34,6 +34,7 @@ Route::get('/order/done/{order}', 'orderController@orderDone');
 
 
 Route::get('/{lang}/contact', 'homeController@contact');
+Route::get('/{lang}/about', 'homeController@about');
 
 Route::post('/contactsend', 'homeController@contactsend');
 

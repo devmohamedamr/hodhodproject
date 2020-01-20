@@ -56,7 +56,6 @@ class HomeController extends Controller
         \App::setLocale($lang);
 
         $Section_name =  str_replace('-', ' ', strtolower($Section_id));
-        // echo $Section_name;die;
 
         $section_by_section_name = SubSection::withTranslations()->where('section_name',$Section_name)->first();
         $section_id = $section_by_section_name['id'];
@@ -92,6 +91,15 @@ class HomeController extends Controller
     }
 
     public function contact($lang){
+        \App::setLocale($lang);
+        $SectionMenu = Section::withTranslations()->get();
+
+        $sliders = Slider::withTranslations()->first();
+
+        return view('front.contact',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu]);
+    }
+
+    public function about($lang){
         \App::setLocale($lang);
         $SectionMenu = Section::withTranslations()->get();
 
