@@ -2,10 +2,10 @@
 <html>
 <!-- Mirrored from wahabali.com/work/pearl-demo/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Dec 2019 16:59:26 GMT -->
 <head>
-    <title>Welcome to Pearl</title>
+<title>{{setting('site.title')}}</title>
 
     <meta name="keywords" content="">
-	<meta name="description" content="">
+    <meta name="description" content="{{setting('site.description')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -20,13 +20,15 @@
     <link href="{{asset('front/css/default-color.css')}}" rel="stylesheet" id="color"  type="text/css">
 
     <!--bootstrap-->
-	<link href="{{asset('front/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
+	{{-- <link href="{{asset('front/css/bootstrap.css')}}" rel="stylesheet" type="text/css"> --}}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!--Dropmenu-->
 	<link href="{{asset('front/css/dropmenu.css')}}" rel="stylesheet" type="text/css">
 
 	<!--Sticky Header-->
-	<link href="{{asset('front/css/sticky-header.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{asset("front/css/sticky-header-$lang.css")}}" rel="stylesheet" type="text/css">
 
 	<!--Sticky Countdown-->
 	<link href="{{asset('front/css/countdown.css')}}" rel="stylesheet" type="text/css">
@@ -53,13 +55,14 @@
     <!--switcher-->
 	<link href="{{asset('front/css/switcher.css')}}" rel="stylesheet" type="text/css">
 
+    <link href="{{asset('front/css/customestyle.css')}}" rel="stylesheet" type="text/css">
+
 </head>
 
   <body>
 
+
 	<!--Switcher-->
-
-
 
   <div id="wrap">
 
@@ -80,115 +83,66 @@
 	<div id="header-1">
        <header class="header-two">
 		   <div class="container">
-	   		<a href="index.html"><img class="logo2" src="images/logo2.png" alt=""></a>
-			<a href="index.html"><img class="logo-dark" src="images/logo-dark.png" alt=""></a>
+	   		<a href="index.html"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
+			<a href="index.html"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
 
-			<div class="cont-right">
+			<div class="cont-right ">
 
-                <nav class="menu-5 nav">
-                    <ul class="wtf-menu">
-                    <li class="select-item"><a href="#.">{{__("home.home")}}</a>
-                        </li>
+            <nav class="menu-5 nav">
+            	<ul class="wtf-menu menurtl">
+                <li class="select-item"><a href="#.">{{__("home.home")}}</a>
+					</li>
 
-                        <li><a href="#.">{{__("home.party")}}</a>
-                            <ul class="submenu">
-                                <li> <a href="menu.html">{{__("home.Buffets")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Barbecue")}}</a> </li>
-                                <li> <a href="menu3.html">{{__("home.Arabic_cooking")}}</a> </li>
-                            </ul>
-                        </li>
+					<li><a href="#.">{{__("home.party")}}</a>
+						<ul class="submenu">
+                        <li> <a href="{{$lang}}/menu/1">{{__("home.Buffets")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/2">{{__("home.Barbecue")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/3">{{__("home.Arabic_cooking")}}</a> </li>
+						</ul>
+					</li>
 
-                        <li><a href="#.">{{__("home.Subsistence")}}</a>
-                            <ul class="submenu">
-                                <li> <a href="menu.html">{{__("home.Hot")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Dry")}}</a> </li>
-                            </ul>
-                        </li>
+                    <li><a href="#.">{{__("home.Subsistence")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/4">{{__("home.Hot")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/5">{{__("home.Dry")}}</a> </li>
+						</ul>
+                    </li>
 
-                        <li><a href="#.">{{__("home.Rations_services")}}</a>
-                            <ul class="submenu">
-                                <li> <a href="menu.html">{{__("home.Missions")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Consulates")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Tourism_companies")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Governmental_ministries")}}</a> </li>
+                    <li><a href="#.">{{__("home.Rations_services")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/6">{{__("home.Missions")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/7">{{__("home.Consulates")}}</a> </li>
+                            <li> <a href="{{$lang}}/menu/8">{{__("home.Tourism_companies")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/9">{{__("home.Governmental_ministries")}}</a> </li>
 
-                            </ul>
-                        </li>
+                        </ul>
+                    </li>
 
-                        <li><a href="#.">{{__("home.sacred_sites")}}</a>
-                            <ul class="submenu">
-                                <li> <a href="menu.html">{{__("home.Pilgrims_inside")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Raft_institutions")}}</a> </li>
-                            </ul>
-                        </li>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/10">{{__("home.Pilgrims_inside")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/11">{{__("home.Raft_institutions")}}</a> </li>
+						</ul>
+                    </li>
 
-                        <li><a href="#.">{{__("home.sacred_sites")}}</a>
-                            <ul class="submenu">
-                                <li> <a href="menu.html">{{__("home.Charitable_section")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.The_way")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Pay")}}</a> </li>
-                                <li> <a href="menu2.html">{{__("home.Breakfast_fasting")}}</a> </li>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/12">{{__("home.Charitable_section")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/13">{{__("home.The_way")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/14">{{__("home.Breakfast_fasting")}}</a> </li>
 
-                            </ul>
-                        </li>
-                        <li><a href="#.">{{__("home.About_company")}}</a>
-
-
-                            <li><a href="#.">{{__("home.call_us")}}</a>
-
-                        </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{$lang}}/about">{{__("home.About_company")}}</a>
 
 
-                    </ul>
-                </nav>
+                    <li><a href="{{$lang}}/callus">{{__("home.call_us")}}</a>
 
-			<ul class="social-icons">
-				<li><a href="#."><i class="icon-facebook-1"></i></a></li>
-				<li><a href="#."><i class="icon-twitter-1"></i></a></li>
-				<li><a href="#."><i class="icon-google"></i></a></li>
-			</ul>
-
-			<ul class="shop-bag">
-				<li class="close-bag"><a class="cart-button"><i class="icon-icons163"></i> <span class="num">2</span></a></li>
-				<li class="open-bag">
-
-					<div class="cart-food">
-						<div class="detail">
-							<img src="images/cart-food1.jpg" alt="">
-							<div class="text">
-								<a href="#.">Blanched Garlic</a>
-								<p>1 x $35.00</p>
-							</div>
-						</div>
-						<a href="#." class="cross"><i class="icon-cancel2"></i></a>
-					</div>
-
-					<div class="cart-food">
-						<div class="detail">
-							<img src="images/cart-food2.jpg" alt="">
-							<div class="text">
-								<a href="#.">GREEN CHILE </a>
-								<p>2 x $40.00</p>
-							</div>
-						</div>
-						<a href="#." class="cross"><i class="icon-cancel2"></i></a>
-					</div>
-
-					<div class="sub-total">
-						<span>SUBTOTAL: <strong>$115.00</strong></span>
-						<div class="buttons">
-							<a href="#." class="view-cart">view cart</a>
-							<a href="#." class="check-out">Check Out</a>
-						</div>
-					</div>
+					</li>
 
 
-				</li>
-			</ul>
-
-			<ul class="get-touch">
-				<li class="contact-no"><a><i class="icon-telephone-receiver"></i> <span>+123 55 33 444</span></a></li>
-			</ul>
+                </ul>
+            </nav>
 
 			</div>
 		</div>
@@ -197,76 +151,6 @@
 	</div>
 
    <!--End Header-->
-
-
-
-	<!--Start Header-->
-	<div id="header-2" style="display:none">
-       <header class="header">
-	   		<a href="index.html"><img class="logo" src="images/logo.png" alt=""></a>
-
-			<nav class="menu-5 nav">
-            	<ul class="wtf-menu">
-                	<li class="parent"><a href="#.">Home</a>
-
-					<ul class="submenu">
-                        <li> <a href="index.html">Home 1</a> </li>
-                        <li> <a href="index2.html">Home 2</a> </li>
-					</ul>
-
-					</li>
-
-					<li><a href="#.">Menu</a>
-
-					<ul class="submenu">
-                        <li> <a href="menu.html">menu 1</a> </li>
-                        <li> <a href="menu2.html">menu 2</a> </li>
-						<li> <a href="menu3.html">menu 3</a> </li>
-					</ul>
-
-					</li>
-					<li><a href="our-story.html">our story</a></li>
-
-
-					<li class="parent"><a class="select-item" href="#.">Blog</a>
-
-					<ul class="submenu">
-                        <li><a href="blog.html">blog 1</a></li>
-						<li><a href="blog2.html">blog 2</a></li>
-					</ul>
-
-					</li>
-
-
-					<li><a href="#.">contact us</a>
-
-					<ul class="submenu">
-                        <li><a href="contact-us.html">contact-us 1</a></li>
-						<li><a href="contact-us2.html">contact-us 2</a></li>
-					</ul>
-
-					</li>
-					<li><a href="shop.html">online order</a></li>
-                </ul>
-            </nav>
-
-
-			<ul class="get-touch">
-				<li class="contact-no"><a><i class="icon-telephone-receiver"></i> <span>+123 55 33 444 888</span></a></li>
-				<li class="book-table"><a href="index.html#book-table" class="topLink"><span>book a table</span> <i class="icon-angle-right"></i></a></li>
-
-
-
-			</ul>
-
-
-       </header>
-	</div>
-
-   <!--End Header-->
-
-
-
 
 
 	<!-- Mobile Menu Start -->
@@ -279,40 +163,55 @@
 
 			<nav id="menu">
 				<ul>
-					<li><a href="#.">Home</a>
-                    	<ul>
-							<li> <a href="index.html">Home Page 1</a> </li>
-							<li> <a href="index2.html">Home Page 2</a> </li>
+                    <li class="select-item"><a href="#.">{{__("home.home")}}</a>
+					</li>
+
+					<li><a href="#.">{{__("home.party")}}</a>
+						<ul class="submenu">
+                        <li> <a href="{{$lang}}/menu/1">{{__("home.Buffets")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/2">{{__("home.Barbecue")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/3">{{__("home.Arabic_cooking")}}</a> </li>
+						</ul>
+					</li>
+
+                    <li><a href="#.">{{__("home.Subsistence")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/4">{{__("home.Hot")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/5">{{__("home.Dry")}}</a> </li>
 						</ul>
                     </li>
-					<li><a href="#.">Fresh Menu</a>
-                    	<ul>
-                        	<li> <a href="menu.html">Menu 1</a> </li>
-							<li> <a href="menu2.html">Menu 2</a> </li>
-							<li> <a href="menu3.html">Menu 3</a> </li>
+
+                    <li><a href="#.">{{__("home.Rations_services")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/6">{{__("home.Missions")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/7">{{__("home.Consulates")}}</a> </li>
+                            <li> <a href="{{$lang}}/menu/8">{{__("home.Tourism_companies")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/9">{{__("home.Governmental_ministries")}}</a> </li>
+
                         </ul>
                     </li>
 
-					<li><a href="our-story.html">Our Story</a></li>
-
-
-                    <li class="select"><a href="#.">Blog</a>
-                    	<ul>
-                        	<li> <a href="blog.html">Blog 1</a> </li>
-							<li> <a href="blog2.html">Blog 2</a> </li>
-                        </ul>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/10">{{__("home.Pilgrims_inside")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/11">{{__("home.Raft_institutions")}}</a> </li>
+						</ul>
                     </li>
 
-					<li><a href="#.">Contact Us</a>
-                    	<ul>
-                        	<li> <a href="contact-us.html">Contact-us 1</a> </li>
-							<li> <a href="contact-us2.html">Contact-us 2</a> </li>
+                    <li><a href="#.">{{__("home.sacred_sites")}}</a>
+						<ul class="submenu">
+							<li> <a href="{{$lang}}/menu/12">{{__("home.Charitable_section")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/13">{{__("home.The_way")}}</a> </li>
+							<li> <a href="{{$lang}}/menu/14">{{__("home.Breakfast_fasting")}}</a> </li>
+
                         </ul>
                     </li>
+                    <li><a href="{{$lang}}/about">{{__("home.About_company")}}</a>
 
-					<li><a href="shop.html">Order Online</a></li>
-					<li><a href="index.html#book-table">Book a Table</a></li>
 
+                    <li><a href="{{$lang}}/callus">{{__("home.call_us")}}</a>
+
+					</li>
 
 				</ul>
 
@@ -707,6 +606,8 @@
   </div>
 
   <script type="text/javascript" src="{{asset('front/js/jquery.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
   <!-- SMOOTH SCROLL -->
   <script type="text/javascript" src="{{asset('front/js/scroll-desktop.js')}}"></script>
@@ -740,10 +641,127 @@
 
   <!-- Switcher -->
   <script type="text/javascript" src="{{asset('front/js/switcher-restaurant.js')}}"></script>
+
+
+  <!-- Date Picker -->
+  <script type="text/javascript">
+  [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+  // in case the input is already filled..
+
+  // events:
+  inputEl.addEventListener( 'focus', onInputFocus );
+  inputEl.addEventListener( 'blur', onInputBlur );
+  } );
+
+  function onInputFocus( ev ) {
+  classie.add( ev.target.parentNode, 'input--filled' );
+  }
+
+  function onInputBlur( ev ) {
+  if( ev.target.value.trim() === '' ) {
+  classie.remove( ev.target.parentNode, 'input--filled' );
+  }
+  }
+
+  //date picker
+  jQuery("#datepicker").datepicker({
+  inline: true
+  });
+
+
+
+  <!-- Form Drop Down -->
+  $(document).ready(function() {
+
+          $(".basic-example").heapbox();
+
+  });
+
+  </script>
+
+
+  <!-- Revolution Slider -->
+  <script type="text/javascript">
+
+  jQuery('.tp-banner').show().revolution(
+  {
+  dottedOverlay:"none",
+  delay:16000,
+  startwidth:1170,
+  startheight:900,
+  hideThumbs:200,
+
+  thumbWidth:100,
+  thumbHeight:50,
+  thumbAmount:5,
+
+  navigationType:"nexttobullets",
+  navigationArrows:"solo",
+  navigationStyle:"preview",
+
+  touchenabled:"on",
+  onHoverStop:"on",
+
+  swipe_velocity: 0.7,
+  swipe_min_touches: 1,
+  swipe_max_touches: 1,
+  drag_block_vertical: false,
+
+  parallax:"mouse",
+  parallaxBgFreeze:"on",
+  parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+  keyboardNavigation:"off",
+
+  navigationHAlign:"center",
+  navigationVAlign:"bottom",
+  navigationHOffset:0,
+  navigationVOffset:20,
+
+  soloArrowLeftHalign:"left",
+  soloArrowLeftValign:"center",
+  soloArrowLeftHOffset:20,
+  soloArrowLeftVOffset:0,
+
+  soloArrowRightHalign:"right",
+  soloArrowRightValign:"center",
+  soloArrowRightHOffset:20,
+  soloArrowRightVOffset:0,
+
+  shadow:0,
+  fullWidth:"on",
+  fullScreen:"off",
+
+  spinner:"spinner4",
+
+  stopLoop:"off",
+  stopAfterLoops:-1,
+  stopAtSlide:-1,
+
+  shuffle:"off",
+
+  autoHeight:"off",
+  forceFullWidth:"off",
+
+
+
+  hideThumbsOnMobile:"off",
+  hideNavDelayOnMobile:1500,
+  hideBulletsOnMobile:"off",
+  hideArrowsOnMobile:"off",
+  hideThumbsUnderResolution:0,
+
+  hideSliderAtLimit:0,
+  hideCaptionAtLimit:0,
+  hideAllCaptionAtLilmit:0,
+  startWithSlide:0,
+  videoJsPath:"rs-plugin/videojs/",
+  fullScreenOffsetContainer: ""
+  });
+  </script>
+
+
   </body>
 
-  <!-- Mirrored from wahabali.com/work/pearl-demo/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Dec 2019 16:59:32 GMT -->
+  <!-- Mirrored from wahabali.com/work/pearl-demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Dec 2019 16:46:40 GMT -->
   </html>
-
-
-

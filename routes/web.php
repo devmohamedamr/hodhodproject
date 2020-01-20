@@ -25,6 +25,19 @@ Route::get('/{lang}/menucontry/{id}', 'HomeController@menubycontry');
 
 
 Route::get('/{lang}/menu/{menu}/{id}', 'HomeController@menuDetails');
+
+Route::post('/order/store', 'orderController@store');
+
+Route::get('/order/index', 'orderController@index');
+
+Route::get('/order/done/{order}', 'orderController@orderDone');
+
+
+Route::get('/{lang}/contact', 'homeController@contact');
+
+Route::post('/contactsend', 'homeController@contactsend');
+
+
 // ---------------------------- front route ----------------
 
 Auth::routes();
