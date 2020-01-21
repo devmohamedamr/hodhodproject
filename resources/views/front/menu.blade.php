@@ -18,7 +18,7 @@
 								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
-                                <button type="button" data-toggle="modal" data-target="#menusection" class="btn btn-info">{{__('home.selectmenu')}}</button>
+                                <button type="button" data-toggle="modal" data-target="#menusection" class="btn btn-danger">{{__('home.selectmenu')}}</button>
                             </div>
 						</div>
                     </div>
@@ -43,40 +43,49 @@
                                     @csrf
                                     <div class="form-group">
                                       <label for="email">{{__('form.name')}}</label>
-                                      <input type="text" name="name" class="form-control" placeholder="Enter email" id="email">
+                                      <input type="text" id="name" required name="name" class="form-control" placeholder="Enter email" id="email">
+                                      <div class="error" id="nameerror"></div>
+
                                     </div>
                                     <div class="form-group">
                                         <label for="email">{{__('form.address')}}</label>
-                                        <input type="text" name="address" class="form-control" placeholder="Enter email" id="email">
-                                      </div>
+                                        <input type="text" id="address" required name="address" class="form-control" placeholder="Enter email" id="email">
+                                        <div class="error" id="addresserror"></div>
+
+                                    </div>
                                       <div class="form-group">
                                         <label for="email">{{__('form.phone')}}</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="Enter email" id="email">
-                                      </div>
+                                        <input type="text" id="phone" required name="phone" class="form-control" placeholder="Enter email" id="email">
+                                        <div class="error" id="phoneerror"></div>
+
+                                    </div>
                                     <div class="form-group">
                                       <label for="pwd">{{__('form.email')}}</label>
-                                      <input type="email" name="email" class="form-control" placeholder="Enter password" id="pwd">
+                                      <input type="email" id="email" required  name="email" class="form-control" placeholder="Enter password" id="pwd">
+                                      <div class="error" id="emailerror"></div>
+
                                     </div>
-                                <input type="hidden" name="menu" value="{{$menu->id}}">
+                                <input type="hidden" name="menu" required value="{{$menu->id}}">
                                     <div class="form-group">
                                         <label for="inputState">{{__('form.section_service')}}</label>
-                                        <select id="inputState" name="service" class="form-control">
+                                        <select id="inputState" required name="service" class="form-control">
                                         <option value="1">{{__('home.service')}}</option>
                                         <option value="2">{{__('home.palace')}}</option>
                                           <option value="3">{{__('home.festival_room')}}</option>
                                           <option value="4">{{__('home.hotel')}}</option>
                                           <option value="5">{{__('home.rest')}}</option>
                                         </select>
+                                        <div class="error" id="menuerror"></div>
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary">send</button>
+                                    <button type="submit" onclick="validation()" class="btn btn-danger">send</button>
                                   </form>
 
                             </div>
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              <button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
 
                           </div>

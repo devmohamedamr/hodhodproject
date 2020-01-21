@@ -393,6 +393,29 @@ $(document).ready(function() {
 
 });
 
+function validation() {
+  var inpObj = document.getElementById("name");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("nameerror").innerHTML = inpObj.validationMessage;
+  }
+
+  var inpObj = document.getElementById("email");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("emailerror").innerHTML = inpObj.validationMessage;
+  }
+
+  var inpObj = document.getElementById("address");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("addresserror").innerHTML = inpObj.validationMessage;
+  }
+
+  var inpObj = document.getElementById("phone");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("phoneerror").innerHTML = inpObj.validationMessage;
+  }
+
+}
+
 </script>
 
 

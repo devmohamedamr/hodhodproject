@@ -27,7 +27,7 @@
 								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
-                                <button type="button" data-toggle="modal" data-target="#menusection" class="btn btn-info">{{__('home.selectmenu')}}</button>
+                                <button type="button" data-toggle="modal" data-target="#menusection" class="btn btn-danger">{{__('home.selectmenu')}}</button>
                             </div>
 						</div>
                     </div>
@@ -52,24 +52,24 @@
                                     @csrf
                                     <div class="form-group">
                                       <label for="email">{{__('form.name')}}</label>
-                                      <input type="text" name="name" class="form-control" placeholder="Enter email" id="email">
+                                      <input required type="text" name="name" class="form-control" placeholder="Enter email" id="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">{{__('form.address')}}</label>
-                                        <input type="text" name="address" class="form-control" placeholder="Enter email" id="email">
+                                        <input required type="text" name="address" class="form-control" placeholder="Enter email" id="email">
                                       </div>
                                       <div class="form-group">
                                         <label for="email">{{__('form.phone')}}</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="Enter email" id="email">
+                                        <input required type="text" name="phone" class="form-control" placeholder="Enter email" id="email">
                                       </div>
                                     <div class="form-group">
                                       <label for="pwd">{{__('form.email')}}</label>
-                                      <input type="email" name="email" class="form-control" placeholder="Enter password" id="pwd">
+                                      <input required type="email" name="email" class="form-control" placeholder="Enter password" id="pwd">
                                     </div>
-                                <input type="hidden" name="menu" value="{{$menu->id}}">
+                                <input type="hidden" required name="menu" value="{{$menu->id}}">
                                     <div class="form-group">
                                         <label for="inputState">{{__('form.section_service')}}</label>
-                                        <select id="inputState" name="service" class="form-control">
+                                        <select required id="inputState" name="service" class="form-control">
                                         <option value="1">{{__('home.service')}}</option>
                                         <option value="2">{{__('home.palace')}}</option>
                                           <option value="3">{{__('home.festival_room')}}</option>
@@ -78,7 +78,9 @@
                                         </select>
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary">send</button>
+                                    <div class="row">
+                                        <button type="submit" onclick="validation()" style="margin:auto" class="btn btn-danger">send</button>
+                                    </div>
                                   </form>
 
                             </div>

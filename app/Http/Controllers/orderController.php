@@ -15,17 +15,27 @@ class orderController extends Controller
 
     public function store(Request $request){
 
-        $order = new order();
-        $order->user_name = $request->input('name');
-        $order->user_email = $request->input('email');
-        $order->user_address = $request->input('address');
-        $order->user_phone = $request->input('phone');
-        $order->service = $request->input('service');
-        $order->menu = $request->input('menu');
 
-        $order->save();
+        $validation_result = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'service' => 'required',
+            'menu' => 'required',
+        ]);
 
-        return  redirect()->back();
+            $order = new order();
+            $order->user_name = $request->input('name');
+            $order->user_email = $request->input('email');
+            $order->user_address = $request->input('address');
+            $order->user_phone = $request->input('phone');
+            $order->service = $request->input('service');
+            $order->menu = $request->input('menu');
+
+            $order->save();
+
+            return  redirect()->back();
 
     }
 
