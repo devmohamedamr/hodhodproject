@@ -10,7 +10,7 @@ use App\Section;
 use App\Menu;
 use App\MenuSection;
 use App\SubSection;
-
+use App\translations;
 class HomeController extends Controller
 {
     public function index($lang){
@@ -56,9 +56,15 @@ class HomeController extends Controller
         \App::setLocale($lang);
 
         $Section_name =  str_replace('-', ' ', strtolower($Section_id));
+        if($lang == 'ar'){
+            $section_by_section_name = SubSection::withTranslations()->where('section_name',$Section_name)->first();
+            $section_id = $section_by_section_name['id'];
 
-        $section_by_section_name = SubSection::withTranslations()->where('section_name',$Section_name)->first();
-        $section_id = $section_by_section_name['id'];
+        }else{
+            $section_by_section_name = translations::where('table_name','sub_section')->where('value',$Section_name)->first();
+            $section_id = $section_by_section_name['foreign_key'];
+        }
+
         $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();

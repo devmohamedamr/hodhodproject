@@ -55,7 +55,7 @@ return [
     'festival_room'=>'festival',
     'hotel'=>'hotel',
     'rest'=>'rest',
-    ''=>'',
+    'view_full_story'=>'view full story',
     ''=>'',
     ''=>'',
     ''=>'',

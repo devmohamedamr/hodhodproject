@@ -13,6 +13,6 @@ class Seo extends Model
     protected $translatable = ['description','keywords','canonical','oglocale','ogtype','ogtitle','ogdescription','ogurl','ogsite_name','ogimage','twittercard','twitterdescription','twittertitle','twitterimage'];
 
     public function pageId(){
-        return $this->belongsToMany(Page::class);
+        return $this->belongsToMany(SubSection::class);
     }
 }

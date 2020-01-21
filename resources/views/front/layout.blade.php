@@ -118,6 +118,7 @@
                 <li><a href={{url("$lang/contact")}}>{{__('home.call_us')}}</a>
 
                 </ul>
+
             </nav>
 			</div>
 		</div>

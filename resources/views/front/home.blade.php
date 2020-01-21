@@ -25,9 +25,12 @@
                     <div class="service-sec-top-bg"></div>
                     <div class="service-sec">
                         <i class="{{$fs->section_img}}"></i>
-                        <h6>{{$fs->section_name}}</h6>
-                        <p>{!! $fs->section_description !!}</p>
-                        <a href="menu3.html">read more</a>
+                        <h6>{{$fs->getTranslatedAttribute('section_name', $lang)}}</h6>
+                        <p>{!! $fs->getTranslatedAttribute('section_description', $lang) !!}</p>
+                        @php
+                            $url = "$lang/menu/".str_replace(' ', '-', strtolower($fs->getTranslatedAttribute('section_name', $lang)));
+                        @endphp
+                        <a href={{url("$url")}}>read more</a>
                     </div>
                     <div class="service-sec-bottom-bg"></div>
                     </div>
@@ -70,7 +73,7 @@
                             <h1>{{__('home.our_story')}}</h1>
                         </div>
                         <p>{!! setting("story.$lang") !!}.</p>
-                        <a href="our-story.html" class="full-story">view full story</a>
+                    <a href={{url("/$lang/about")}} class="full-story">{{__("home.view_full_story")}}</a>
                         </div>
                     </div>
 
@@ -87,7 +90,7 @@
 
 
     <!--Start Upcoming Event-->
-    <div class="upcoming-event">
+    {{-- <div class="upcoming-event">
 
 
             <div class="parallax parallax-event">
@@ -141,7 +144,7 @@
 
             </div>
 
-    </div>
+    </div> --}}
     <!--End Upcoming Event-->
 
 
