@@ -7,41 +7,25 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-md-8">
+					<div class="col-md-12">
 
 							<div class="news-detail">
 								<img src="images/blog/side-bar/news-img5.jpg" alt="">
 								<div class="detail">
-									<h3>Standard Post Format</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-									<br/><br/>
-									Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
-
-									<div class="sub-detail">
-										<h6>Pick your breakfast</h6>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor. </p>
-										<div class="sub-images">
-											<img src="images/blog/simple-posts/news-img1.jpg" alt="">
-											<img class="right" src="images/blog/simple-posts/news-img2.jpg" alt="">
-										</div>
-									</div>
-
-									<p>Aliquam ullamcorper finibus lorem ut auctor. Aliquam sed aliquet eros. Vivamus maximus dignissim mi et accumsan. Aliquam ullamcorper finibus lorem ut auctor. Aliquam sed aliquet eros. Vivamus maximus dignissim mi et accumsan Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.
-									<br/><br/>
-									Aliquam ullamcorper finibus lorem ut auctor. Aliquam sed aliquet eros. Vivamus maximus dignissim mi et accumsan. Aliquam ullamcorper finibus lorem ut auctor. Aliquam sed aliquet eros. Vivamus maximus dignissim mi et accumsan.</p>
+                                    {!! $blogdetalis->getTranslatedAttribute('blog_content',$lang) !!}
 								</div>
 							</div>
 
 
 							<div class="share-post">
-								<h5>Share this Post!</h5>
+								{{-- <h5>Share this Post!</h5> --}}
 								<a class="social-icons" href="#.">
 									<img src="images/share-post.jpg" alt="">
 								</a>
 							</div>
 
 
-							<div class="author-post">
+							{{-- <div class="author-post">
 								<div class="author-detail">
 									<img src="images/author.jpg" alt="">
 									<div class="text">
@@ -50,10 +34,10 @@
 										<p>Aliquam ullamcorper finibus lorem ut auctor. Aliquam sed aliquet eros. Vivamus maximus dignissim mi et accumsan. Aliquam ullamcorper finibus lorem ut auctor.</p>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 
-							<div class="comments-sec">
+							{{-- <div class="comments-sec">
 								<h5>4 Comments</h5>
 
 								<div class="all-comments">
@@ -123,15 +107,15 @@
 									<textarea name=" " cols="1" rows="1" onblur="if(this.value == '') { this.value='Message'}" onfocus="if (this.value == 'Message') {this.value=''}" value="Message">Message</textarea>
 									<input name=" " type="submit" value="submit">
 								</div>
-							</div>
+							</div> --}}
 
 
 
 					</div>
 
-					<div class="col-md-4">
+					{{-- <div class="col-md-4"> --}}
 
-						<div class="recent-posts">
+						{{-- <div class="recent-posts">
 							<h6 class="bar-title">Recent Posts</h6>
 
 							<div class="post-sec">
@@ -193,9 +177,9 @@
 						<div class="search">
 							<input name=" " type="text" onblur="if(this.value == '') { this.value='Search here'}" onfocus="if (this.value == 'Search here') {this.value=''}" value="Search here">
 							<a href="#."><i class="icon-search2"></i></a>
-						</div>
+						</div> --}}
 
-					</div>
+					{{-- </div> --}}
 
 				</div>
 			</div>

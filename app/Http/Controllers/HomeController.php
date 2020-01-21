@@ -36,11 +36,12 @@ class HomeController extends Controller
     public function blog($lang,$id){
         \App::setLocale($lang);
         $SectionMenu = Section::withTranslations()->get();
+        $seobysection = Seo::withTranslations()->where('page_id',18)->first();
 
         $sliders = Slider::withTranslations()->first();
 
-        $blogdetalis = DB::table('blog')->where('id', $id)->first();
-        return view('front.blogdetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'blogdetalis'=>$blogdetalis]);
+        $blogdetalis = Blog::withTranslations()->where('id', $id)->first();
+        return view('front.blogdetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'seobysection'=>$seobysection,'blogdetalis'=>$blogdetalis]);
     }
 
     public function menuBySection($lang,$Section_id){

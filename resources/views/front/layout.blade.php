@@ -210,8 +210,8 @@
 				<div class="row">
 				<div class="col-md-12">
 					<div class="main-title">
-						<span>Short Info</span>
-						<h1>Get in touch</h1>
+                    <span>{{__('home.Short_Info')}}</span>
+						<h1>{{__('home.GET_IN_TOUCH')}}</h1>
 					</div>
 				</div>
 				</div>
@@ -219,23 +219,23 @@
 				<div class="get-touch">
 					<div class="row">
 
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="contact-us">
 									<h4>Contact Us</h4>
 									<div class="detail">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Aenean ac.</p>
 										<ul>
-											<li class="phone"><i class="icon-telephone"></i> <span>+123 55 33 444 888</span></li>
-											<li class="email"><i class="icon-email-1"></i> <span>Help@pearl.com</span></li>
-											<li class="location"><i class="icon-home"></i> <span>329 Queensberry Street, North Me bourne, Australia.</span></li>
+                                        <li class="phone"><i class="icon-telephone"></i> <span>{{setting('contact-us.phone')}}</span></li>
+											<li class="email"><i class="icon-email-1"></i> <span>{{setting("contact-us.email")}}</span></li>
+                                        <li class="location"><i class="icon-home"></i> <span>{!! setting("contact-us.address_$lang") !!}</span></li>
 										</ul>
 									</div>
 							</div>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="open-hours">
-									<h4>Opening Hour</h4>
+                            <h4>{{__('OpeningHour')}}</h4>
 									<div class="detail">
 										<ul>
 											<li><span class="day">Monday</span> <span class="time">09 am - 10 pm</span></li>
@@ -250,19 +250,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-4">
-							<div class="instagram">
-									<h4>Instagram</h4>
-									<div class="detail">
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img1.jpg" alt=""></a></div>
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img2.jpg" alt=""></a></div>
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img3.jpg" alt=""></a></div>
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img4.jpg" alt=""></a></div>
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img5.jpg" alt=""></a></div>
-										<div class="col-md-4"><a href="#."><img src="images/instagram-img6.jpg" alt=""></a></div>
-									</div>
-							</div>
-						</div>
+
 
 
 					</div>
@@ -318,12 +306,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<span>Copyright © 2016 Pearl Hotel. All rights reserved. by <a href="#.">Brighthemes</a></span>
-							<ul>
-							<li><a href="#.">Permissions and Copyrights</a></li>
-								<li><span class="divid">-</span></li>
-							<li><a href="#.">Contact Us</a></li>
-							</ul>
+							<span>Copyright © 2020 Hodhod. All rights reserved. by <a href="https://psmedia-eg.com/" target="_blanck">PSmedia</a></span>
 						</div>
 					</div>
 				</div>
