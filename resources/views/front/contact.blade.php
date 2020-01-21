@@ -12,29 +12,8 @@
                 <div class="container">
                 <div class="row">
 
-                    <div class="col-md-6">
 
-                        <div class="get-touch-detail">
-                            <h3>Get in Touch</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. interdum hendrerit lacinia. Semper ac dolor vitae accumsan. interdum hendrerit lacinia.
-                            <br/><br/>
-                            f you have questions or comments, please get a hold of us in whichever way is most convenient. Ask away.</p>
-                        </div>
-
-                        <div class="social-icons">
-                            <h5>Follow Along</h5>
-                            <ul>
-                                <li><a href="#."><i class="icon-facebook-1"></i></a></li>
-                                <li><a href="#."><i class="icon-twitter-1"></i></a></li>
-                                <li><a href="#."><i class="icon-google"></i></a></li>
-                                <li><a href="#."><i class="icon-pinterest-p"></i></a></li>
-                                <li><a href="#."><i class="icon-instagram"></i></a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="get-touch-form">
                         <p class="success_msg" id="success_msg" style="display:none">Thank You! We will contact you shortly.</p>
                         <form name="contact_form"  action="{{url('/contactsend')}}" method="post">
@@ -55,11 +34,11 @@
     <!--End Get in Touch-->
 
 
-    <!--Start Map-->
+    {{-- <!--Start Map-->
         <div id='map'>
             <div id='find-us'></div>
         </div>
-    <!--End Map-->
+    <!--End Map--> --}}
 
 
     </div>

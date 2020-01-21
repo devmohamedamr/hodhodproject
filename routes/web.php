@@ -21,7 +21,7 @@ Route::get('/{lang}/blog/{id}', 'HomeController@blog');
 Route::get('/{lang}/menu/{id}', 'HomeController@menuBySection');
 
 
-Route::get('/{lang}/menucontry/{id}', 'HomeController@menubycontry');
+// Route::get('/{lang}/menucontry/{id}', 'HomeController@menubycontry');
 
 
 Route::get('/{lang}/menu/{menu}/{id}', 'HomeController@menuDetails');
