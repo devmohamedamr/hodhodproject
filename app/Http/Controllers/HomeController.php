@@ -17,27 +17,15 @@ class HomeController extends Controller
         \App::setLocale($lang);
 
         $blogs = blog::withTranslations()->get();
-        // echo $blog->getTranslatedAttribute('blog_title', 'en');
 
-        // foreach($posts as $post){
-        //    echo $post->getTranslatedAttribute('blog_title', 'en');
-        // }
-
-
-
-        // dd($SectionMenu);
         $favoriteSection = Section::withTranslations()->where('section_favorite',1)->get();
 
 
         $favoriteMenu = Menu::withTranslations()->where('favorite',1)->first();
 
-        // $favoriteSection = DB::table('sections')->where('language_iso',"$lang")->where('section_favorite',1)->get();
-
-        // $favoriteMenu = DB::table('menu')->where('menu_language',"$lang")->where('favorite',1)->first();
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
-            // dd($sliders);
         return view('front.home',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
     }
 

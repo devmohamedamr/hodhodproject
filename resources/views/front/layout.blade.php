@@ -258,21 +258,16 @@
 					<div class="row">
 
 					<div class="col-md-12">
-						<div class="about-detail">
-							<h5>About Pearl</h5>
-							<p>PEARL is an Lorem ipsum porta placerat rutrum aliquet platea accumsan, molestie eros aliquet adipiscing egestas ultrices, leo convallis dolor nisl integer potenti fringilla aenean condimentum ipsum maecenas aliquet consectetur.</p>
-						</div>
+
 					</div>
 
 					<div class="col-md-6">
 						<div class="follow-us">
-							<h5>Follow Along</h5>
+                        <h5>{{__("home.Follow")}}</h5>
 							<ul>
-								<li><a href="#."><i class="icon-facebook-1"></i></a></li>
+								<li><a href="{{setting('social.facebook')}}"><i class="icon-facebook-1"></i></a></li>
 								<li><a href="#."><i class="icon-twitter-1"></i></a></li>
-								<li><a href="#."><i class="icon-google"></i></a></li>
-								<li><a href="#."><i class="icon-pinterest-p"></i></a></li>
-								<li><a href="#."><i class="icon-instagram"></i></a></li>
+								<li><a href="{{setting('social.instgram')}}"><i class="icon-instagram"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -280,7 +275,7 @@
 
 					<div class="col-md-6">
 						<div class="newsletter">
-							<h5>Newsletter</h5>
+                        <h5>{{__("home.Newsletter")}}</h5>
 
 							<div class="field">
 								<p id="nws_success_msg" class="success_msg" style="display:none">Thank You for subscribing.</p>
