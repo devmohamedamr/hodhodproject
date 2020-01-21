@@ -62,7 +62,7 @@ class HomeController extends Controller
         }
 
         $seobysection = Seo::withTranslations()->where('page_id',$section_id)->first();
-        // $seobysection = '';
+        // dd($section_id );
         $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();

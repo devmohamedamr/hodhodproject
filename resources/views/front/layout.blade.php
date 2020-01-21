@@ -4,8 +4,6 @@
 <head>
 <title>{{setting('site.title')}}</title>
 
-    <meta name="keywords" content="">
-    <meta name="description" content="{{setting('site.description')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -56,24 +54,26 @@
 	<link href="{{asset('front/css/switcher.css')}}" rel="stylesheet" type="text/css">
 
     <link href="{{asset('front/css/customestyle.css')}}" rel="stylesheet" type="text/css">
-
+    @if(isset($seobysection)>0)
 	<meta name="description" content="{{$seobysection->getTranslatedAttribute('description', $lang)}}" />
-    <meta name="keywords" content="" />
-    <link rel="canonical" href="" />
-	<link rel="alternate" href="" />
-    <meta property="og:locale" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="fb:app_id" content="" />
-    <meta property="og:image" content="" />
-    <meta name="twitter:card" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="keywords" content="{{$seobysection->getTranslatedAttribute('keywords', $lang)}}" />
+    <link rel="canonical" href="{{$seobysection->getTranslatedAttribute('canonical', $lang)}}" />
+    <meta property="og:locale" content="{{$seobysection->getTranslatedAttribute('oglocale	', $lang)}}" />
+    <meta property="og:type" content="{{$seobysection->getTranslatedAttribute('ogtype', $lang)}}" />
+    <meta property="og:title" content="{{$seobysection->getTranslatedAttribute('ogtitle', $lang)}}" />
+    <meta property="og:description" content="{{$seobysection->getTranslatedAttribute('ogdescription', $lang)}}" />
+    <meta property="og:url" content="{{$seobysection->getTranslatedAttribute('ogurl', $lang)}}" />
+    <meta property="og:site_name" content="{{$seobysection->getTranslatedAttribute('ogsite_name', $lang)}}" />
+    <meta property="og:image" content="{{$seobysection->getTranslatedAttribute('ogimage', $lang)}}" />
+    <meta name="twitter:card" content="{{$seobysection->getTranslatedAttribute('twittercard', $lang)}}" />
+    <meta name="twitter:description" content="{{$seobysection->getTranslatedAttribute('twitterdescription', $lang)}}" />
+    <meta name="twitter:title" content="{{$seobysection->getTranslatedAttribute('twittertitle', $lang)}}" />
+    <meta name="twitter:image" content="{{$seobysection->getTranslatedAttribute('twitterimage', $lang)}}" />
+    @else
+    <meta name="keywords" content="">
+    <meta name="description" content="{{setting('site.description')}}">
 
+    @endif
 </head>
 
   <body>
