@@ -11,6 +11,7 @@ use App\Menu;
 use App\MenuSection;
 use App\SubSection;
 use App\translations;
+use App\Seo;
 class HomeController extends Controller
 {
     public function index($lang){
@@ -19,14 +20,16 @@ class HomeController extends Controller
         $blogs = blog::withTranslations()->get();
 
         $favoriteSection = Section::withTranslations()->where('section_favorite',1)->get();
+        $seobysection = Seo::withTranslations()->where('page_id',18)->first();
+        // $seobysection = '';
 
-
+        // dd($seobysection);
         $favoriteMenu = Menu::withTranslations()->where('favorite',1)->first();
 
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
-        return view('front.home',['sliders'=>$sliders,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
+        return view('front.home',['sliders'=>$sliders,'seobysection'=>$seobysection,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
     }
 
 
@@ -53,6 +56,8 @@ class HomeController extends Controller
             $section_id = $section_by_section_name['foreign_key'];
         }
 
+        $seobysection = Seo::withTranslations()->where('page_id',$section_id)->first();
+        // $seobysection = '';
         $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();
@@ -60,10 +65,10 @@ class HomeController extends Controller
         $sliders = Slider::withTranslations()->first();
 
         if($section_id == 18 || $section_id == 19){
-            return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+            return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection]);
 
         }else{
-            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection]);
 
         }
     }
