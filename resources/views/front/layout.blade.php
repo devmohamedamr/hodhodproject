@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!--Dropmenu-->
-	<link href="{{asset('front/css/dropmenu.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{asset("front/css/dropmenu-$lang.css")}}" rel="stylesheet" type="text/css">
 
 	<!--Sticky Header-->
 	<link href="{{asset("front/css/sticky-header-$lang.css")}}" rel="stylesheet" type="text/css">
@@ -392,6 +392,87 @@ $(document).ready(function() {
 		$(".basic-example").heapbox();
 
 });
+
+
+function validateForm() {
+    // Retrieving the values of form elements
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var phone = document.contactForm.mobile.value;
+    var address = document.contactForm.address.value;
+    var gender = document.contactForm.gender.value;
+
+
+	// Defining error variables with a default value
+    var nameErr = emailErr = mobileErr = countryErr = genderErr = true;
+
+    // Validate name
+    if(name == "") {
+        printError("nameerror", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;
+        if(regex.test(name) === false) {
+            printError("nameerror", "Please enter a valid name");
+        } else {
+            printError("nameerror", "");
+            nameErr = false;
+        }
+    }
+
+    // Validate email address
+    if(email == "") {
+        printError("emailerror", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailerror", "Please enter a valid email address");
+        } else{
+            printError("emailerror", "");
+            emailErr = false;
+        }
+    }
+
+    // Validate mobile number
+    if(phone == "") {
+        printError("phoneerror", "Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(phone) === false) {
+            printError("phoneerror", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("phoneerror", "");
+            mobileErr = false;
+        }
+    }
+
+    // Validate country
+    if(address == "") {
+        printError("addresserror", "Please select your country");
+    } else {
+        printError("addresserror", "");
+        countryErr = false;
+    }
+
+
+    // Prevent the form from being submitted if there are any errors
+    if((nameErr || emailErr || mobileErr || countryErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "You've entered the following details: \n" +
+                          "Full Name: " + name + "\n" +
+                          "Email Address: " + email + "\n" +
+                          "Mobile Number: " + mobile + "\n" +
+                          "Country: " + country + "\n" +
+                          "Gender: " + gender + "\n";
+        if(hobbies.length) {
+            dataPreview += "Hobbies: " + hobbies.join(", ");
+        }
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+};
 
 function validation() {
   var inpObj = document.getElementById("name");

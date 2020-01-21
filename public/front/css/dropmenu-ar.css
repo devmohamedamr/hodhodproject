@@ -16,9 +16,9 @@ ul.wtf-menu li{
 	position: absolute;
 	top: 40px;
 	padding-top: 30px;
-	left:0px;
+	right:0px;
 	display:none;
-	
+
 	/* 	Dropdown shadow */
 }
 .wtf-menu ul.submenu ul.submenu{padding-top: 0px;}
@@ -35,7 +35,8 @@ ul.wtf-menu li{
 	border-bottom: 1px solid #eee;
 	text-transform: none;
 	padding: 0 !important;
-	background:#fff;
+    background:#fff;
+    border: solid 1px #b7b5b5;
 }
 .wtf-menu ul.submenu li a{ display:block;    line-height: 0;    border-left: none;}
 .wtf-menu ul.submenu li:last-child a{border-right: none;}
@@ -88,7 +89,7 @@ ul.wtf-menu ul li.parent:after{
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
-    
+
 .submenu li:last-child a:hover { }
 .wtf-menu ul.submenu li:hover { border-radius: 0px;}
 .wtf-menu ul.submenu li.parent:hover a{ color:#fff;}
@@ -102,15 +103,15 @@ ul.wtf-menu ul li.parent:after{
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color:#fff;  
+   color:#fff;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color:#fff;  
+   color:#fff;
 }
 
-:-ms-input-placeholder {  
-   color:#fff;  
+:-ms-input-placeholder {
+   color:#fff;
 }
 /* Menu-1 */
 
@@ -158,7 +159,7 @@ ul.wtf-menu ul li.parent:after{
 	-moz-animation: fadeIn .3s ease-in ;
     -webkit-animation: fadeIn .3s ease-in ;
     animation:fadeIn  .3s ease-in ;
- 
+
 
 }
 
@@ -179,7 +180,7 @@ ul.wtf-menu ul li.parent:after{
 	-moz-animation: zoomIn .3s ease-in;
     -webkit-animation: zoomIn .3s ease-in ;
     animation: zoomIn .3s ease-in;
-   
+
 
 }
 
@@ -201,7 +202,7 @@ ul.wtf-menu ul li.parent:after{
 	-moz-animation: flipInX .3s ease-in;
     -webkit-animation: flipInX .3s ease-in ;
     animation: flipInX .3s ease-in;
-   
+
 
 }
 

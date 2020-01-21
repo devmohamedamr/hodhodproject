@@ -35,7 +35,7 @@ return [
     'Pay' => 'Pay   ',
     'Breakfast_fasting' => 'Breakfast fasting',
     'About_company' => 'About company',
-    'call_us' => 'call us',
+    'call_us' => 'Contact Us',
     'Discover' => 'Discover',
     'our_story' => 'Our Story',
     'Todays' => 'Today’s',

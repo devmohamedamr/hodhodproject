@@ -78,7 +78,9 @@
                                         <div class="error" id="menuerror"></div>
 
                                     </div>
-                                    <button type="submit" onclick="validation()" class="btn btn-danger">send</button>
+                                    <div class="row">
+                                        <button type="submit" style="margin:auto" onclick="validation()" class="btn btn-danger">send</button>
+                                    </div>
                                   </form>
 
                             </div>
