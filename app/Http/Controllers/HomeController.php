@@ -109,7 +109,7 @@ class HomeController extends Controller
 
         $sliders = Slider::withTranslations()->first();
 
-        return view('front.contact',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu]);
+        return view('front.about',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu]);
     }
 
     public function contactsend(Request $request){
