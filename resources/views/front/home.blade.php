@@ -207,45 +207,18 @@
                         <div class="span12">
 
                             <div id="owl-demo2" class="owl-carousel">
+                                @foreach($Testimonial as $test)
+                                <div class="testi-sec">
+                                <img src="{{asset("storage/$test->testimonial_user_img")}}" alt="">
+                                <div class="height35"></div>
+                                <span class="name">{{$test->getTranslatedAttribute('testimonial_name', $lang)}}</span>
+                                <span class="work">{{$test->getTranslatedAttribute('testimonial_job', $lang)}}</span>
+                                <div class="height20"></div>
+                                <p>{!! $test->getTranslatedAttribute('testimonial_details', $lang) !!}</p>
+                                <div class="height20"></div>
 
-                            <div class="testi-sec">
-                            <img src="images/testimonial-img1.jpg" alt="">
-                            <div class="height35"></div>
-                            <span class="name">Christian Stewart</span>
-                            <span class="work">Fashion Designer</span>
-                            <div class="height20"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. interdum hendrerit lacinia.</p>
-                            <div class="height20"></div>
-                            <div class="rating">
-                                <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                            </div>
-                            </div>
-
-                            <div class="testi-sec">
-                            <img src="images/testimonial-img2.jpg" alt="">
-                            <div class="height35"></div>
-                            <span class="name">johny Bravo</span>
-                            <span class="work">TV Actor</span>
-                            <div class="height20"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. interdum hendrerit lacinia Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan. </p>
-                            <div class="height20"></div>
-                            <div class="rating">
-                                <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                            </div>
-                            </div>
-
-                            <div class="testi-sec">
-                            <img src="images/testimonial-img3.jpg" alt="">
-                            <div class="height35"></div>
-                            <span class="name">Rubica noi</span>
-                            <span class="work">Founder Photography</span>
-                            <div class="height20"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper ac dolor vitae accumsan.</p>
-                            <div class="height20"></div>
-                            <div class="rating">
-                                <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i>
-                            </div>
-                            </div>
+                                </div>
+                            @endforeach
 
 
                             </div>

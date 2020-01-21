@@ -12,6 +12,7 @@ use App\MenuSection;
 use App\SubSection;
 use App\translations;
 use App\Seo;
+use App\Testimonial;
 class HomeController extends Controller
 {
     public function index($lang){
@@ -28,8 +29,11 @@ class HomeController extends Controller
 
         $SectionMenu = Section::withTranslations()->get();
 
+        $Testimonial = Testimonial::withTranslations()->get();
+
+
         $sliders = Slider::withTranslations()->first();
-        return view('front.home',['sliders'=>$sliders,'seobysection'=>$seobysection,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu]);
+        return view('front.home',['sliders'=>$sliders,'seobysection'=>$seobysection,'lang'=>$lang,'blogs'=>$blogs,'favoriteMenu'=>$favoriteMenu,'favoriteSection'=>$favoriteSection,'SectionMenu'=>$SectionMenu,'Testimonial'=>$Testimonial]);
     }
 
 

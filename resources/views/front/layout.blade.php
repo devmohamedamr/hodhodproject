@@ -221,7 +221,7 @@
 
 						<div class="col-md-6">
 							<div class="contact-us">
-									<h4>Contact Us</h4>
+                            <h4>{{__('home.Contact_Us')}}</h4>
 									<div class="detail">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Aenean ac.</p>
 										<ul>
@@ -235,17 +235,9 @@
 
 						<div class="col-md-6">
 							<div class="open-hours">
-                            <h4>{{__('OpeningHour')}}</h4>
+                            <h4>{{__('home.OpeningHour')}}</h4>
 									<div class="detail">
-										<ul>
-											<li><span class="day">Monday</span> <span class="time">09 am - 10 pm</span></li>
-											<li><span class="day">Tuesday</span> <span class="time">09 am - 10 pm</span></li>
-											<li><span class="day">Wednesday</span> <span class="time">09 am - 10 pm</span></li>
-											<li><span class="day">Thursday</span> <span class="time">09 am - 10 pm</span></li>
-											<li><span class="day">Friday</span> <span class="time">11 am - 08 pm</span></li>
-											<li><span class="day">Saturday</span> <span class="time">10 am - 11 pm</span></li>
-											<li><span class="day">Sunday</span> <span class="time">Closed</span></li>
-										</ul>
+                                        {!! setting("contact-us.opening_$lang")!!}
 									</div>
 							</div>
 						</div>

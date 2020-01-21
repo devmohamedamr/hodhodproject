@@ -61,7 +61,7 @@ return [
     'Short_Info'=>'Short Info',
     'GET_IN_TOUCH'=>'GET IN TOUCH',
     'OpeningHour'=>'Opening Hour',
-    ''=>'',
+    'Contact_Us'=>'Contact Us',
     ''=>'',
     ''=>'',
     ''=>'',
