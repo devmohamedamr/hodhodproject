@@ -62,7 +62,7 @@ return [
     'GET_IN_TOUCH'=>'GET IN TOUCH',
     'OpeningHour'=>'Opening Hour',
     'Contact_Us'=>'Contact Us',
-    ''=>'',
+    'send'=>'send',
     ''=>'',
     ''=>'',
     ''=>'',

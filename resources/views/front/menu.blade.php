@@ -42,26 +42,22 @@
                             <form action="{{url('order/store')}}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                      <label for="email">{{__('form.name')}}</label>
-                                      <input type="text" id="name" required name="name" class="form-control" placeholder="Enter email" id="email">
+                                      <input type="text" id="name" required name="name" class="form-control" placeholder="{{__('form.name')}}" id="email">
                                       <div class="error" id="nameerror"></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">{{__('form.address')}}</label>
-                                        <input type="text" id="address" required name="address" class="form-control" placeholder="Enter email" id="email">
+                                        <input type="text" id="address" required name="address" class="form-control" placeholder="{{__('form.address')}}" id="email">
                                         <div class="error" id="addresserror"></div>
 
                                     </div>
                                       <div class="form-group">
-                                        <label for="email">{{__('form.phone')}}</label>
-                                        <input type="text" id="phone" required name="phone" class="form-control" placeholder="Enter email" id="email">
+                                        <input type="text" id="phone" required name="phone" class="form-control" placeholder="{{__('form.phone')}}" id="email">
                                         <div class="error" id="phoneerror"></div>
 
                                     </div>
                                     <div class="form-group">
-                                      <label for="pwd">{{__('form.email')}}</label>
-                                      <input type="email" id="email" required  name="email" class="form-control" placeholder="Enter password" id="pwd">
+                                      <input type="email" id="email" required  name="email" class="form-control" placeholder="{{__('form.email')}}" id="pwd">
                                       <div class="error" id="emailerror"></div>
 
                                     </div>
@@ -79,15 +75,10 @@
 
                                     </div>
                                     <div class="row">
-                                        <button type="submit" style="margin:auto" onclick="validation()" class="btn btn-danger">send</button>
+                                    <button type="submit" style="margin:auto" onclick="validation()" class="btn btn-danger">{{__('home.send')}}</button>
                                     </div>
                                   </form>
 
-                            </div>
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                              <button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
 
                           </div>

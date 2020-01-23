@@ -22,7 +22,7 @@
                 @foreach($favoriteSection as $fs)
                 <div class="col-md-4">
                     <div class="serv-main-sec">
-                    <div class="service-sec-top-bg"></div>
+                    {{-- <div class="service-sec-top-bg"></div> --}}
                     <div class="service-sec">
                         <i class="{{$fs->section_img}}"></i>
                         <h6>{{$fs->getTranslatedAttribute('section_name', $lang)}}</h6>
@@ -32,7 +32,7 @@
                         @endphp
                         <a href={{url("$url")}}>read more</a>
                     </div>
-                    <div class="service-sec-bottom-bg"></div>
+                    {{-- <div class="service-sec-bottom-bg"></div> --}}
                     </div>
                 </div>
                 @endforeach
