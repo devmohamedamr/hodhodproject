@@ -69,8 +69,8 @@ ul.wtf-menu ul li.parent:after{
   border-radius: 0px !important;
  transition: background-color 0s ease;
 }
-.submenu li:last-child{ border-bottom:none !important;}
-.submenu a{border-bottom:none !important;}
+.submenu li:last-child{ }
+.submenu a{}
 .submenu a.select {
   color:#fff !important;
   width: 100%;

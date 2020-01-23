@@ -105,6 +105,7 @@ class HomeController extends Controller
 
     public function about($lang){
         \App::setLocale($lang);
+
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();

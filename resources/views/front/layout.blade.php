@@ -19,7 +19,6 @@
 
     <!--bootstrap-->
 	{{-- <link href="{{asset('front/css/bootstrap.css')}}" rel="stylesheet" type="text/css"> --}}
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!--Dropmenu-->
@@ -124,7 +123,7 @@
                                             @php
                                                 $url = "$lang/menu/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
                                             @endphp
-                                            <li> <a href="{{url("$url")}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                            <li class=""> <a href="{{url("$url")}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
                                             @endforeach
                                         </ul>
                                 @endif
@@ -492,21 +491,30 @@ function validation() {
   var inpObj = document.getElementById("name");
   if (!inpObj.checkValidity()) {
     document.getElementById("nameerror").innerHTML = inpObj.validationMessage;
+
+    inpObj.classList.add("my-form-warning");
+
   }
 
   var inpObj = document.getElementById("email");
   if (!inpObj.checkValidity()) {
     document.getElementById("emailerror").innerHTML = inpObj.validationMessage;
+    inpObj.classList.add("my-form-warning");
+
   }
 
   var inpObj = document.getElementById("address");
   if (!inpObj.checkValidity()) {
     document.getElementById("addresserror").innerHTML = inpObj.validationMessage;
+    inpObj.classList.add("my-form-warning");
+
   }
 
   var inpObj = document.getElementById("phone");
   if (!inpObj.checkValidity()) {
     document.getElementById("phoneerror").innerHTML = inpObj.validationMessage;
+    inpObj.classList.add("my-form-warning");
+
   }
 
 }
