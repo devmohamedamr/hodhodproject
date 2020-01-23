@@ -38,6 +38,9 @@ Route::get('/{lang}/about', 'HomeController@about');
 
 Route::post('/contactsend', 'HomeController@contactsend');
 
+// Route::get('/link', function () {
+//     Artisan::call('storage:link');
+// });
 
 // ---------------------------- front route ----------------
 
