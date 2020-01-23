@@ -21,7 +21,7 @@ Route::get('/{lang}/blog/{id}', 'HomeController@blog');
 Route::get('/{lang}/menu/{id}', 'HomeController@menuBySection');
 
 
-// Route::get('/{lang}/menucontry/{id}', 'HomeController@menubycontry');
+Route::get('/{lang}/menucontry/{id}', 'HomeController@menubycontry');
 
 
 Route::get('/{lang}/menu/{menu}/{id}', 'HomeController@menuDetails');
@@ -33,10 +33,10 @@ Route::get('/order/index', 'orderController@index');
 Route::get('/order/done/{order}', 'orderController@orderDone');
 
 
-Route::get('/{lang}/contact', 'homeController@contact');
-Route::get('/{lang}/about', 'homeController@about');
+Route::get('/{lang}/contact', 'HomeController@contact');
+Route::get('/{lang}/about', 'HomeController@about');
 
-Route::post('/contactsend', 'homeController@contactsend');
+Route::post('/contactsend', 'HomeController@contactsend');
 
 
 // ---------------------------- front route ----------------

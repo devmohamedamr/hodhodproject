@@ -30,7 +30,7 @@
                         @php
                             $url = "$lang/menu/".str_replace(' ', '-', strtolower($fs->getTranslatedAttribute('section_name', $lang)));
                         @endphp
-                        <a href={{url("$url")}}>read more</a>
+                        <a href={{url("$url")}}>{{__('home.read_more')}}</a>
                     </div>
                     {{-- <div class="service-sec-bottom-bg"></div> --}}
                     </div>

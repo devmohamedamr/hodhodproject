@@ -290,7 +290,7 @@
 							<div class="field">
 								<p id="nws_success_msg" class="success_msg" style="display:none">Thank You for subscribing.</p>
 								<form name="newsletter_form" id="newsletter_form" method="post" onSubmit="return false">
-								<input name="nws_email_address" id="nws_email_address" type="text" onKeyPress="remove_newsletter_errors();" onblur="if(this.value == '') { this.value='Enter your e-mail address'}" onfocus="if (this.value == 'Enter your e-mail address') {this.value=''}" value="Enter your e-mail address">
+                                <input name="nws_email_address" id="nws_email_address" type="text" onKeyPress="remove_newsletter_errors();" onblur="if(this.value == '') { this.value='{{__('form.enter_email')}}'}" onfocus="if (this.value == '{{__('form.enter_email')}}') {this.value=''}" value="{{__('form.enter_email')}}">
 								<a href="#." onClick="validateNewsletter();"><i class="icon-icons208"></i></a>
 								</form>
 							</div>

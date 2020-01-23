@@ -63,7 +63,7 @@ return [
     'OpeningHour'=>'Opening Hour',
     'Contact_Us'=>'Contact Us',
     'send'=>'send',
-    ''=>'',
+    'read_more'=>'read more',
     ''=>'',
     ''=>'',
     ''=>'',
