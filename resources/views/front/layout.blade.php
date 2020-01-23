@@ -97,46 +97,52 @@
 
 
    <!--Start Header-->
-	<div id="header-1">
-       <header class="header-two">
-		   <div class="container">
+	<div id="header-1 container">
+       <header class="header-two ">
+		   <div class="">
 	   		<a href="/{{$lang}}"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
 			<a href="/{{$lang}}"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
 
 			<div class="cont-right ">
 
-            <nav class="menu-5 nav">
-            	<ul class="wtf-menu menurtl">
-                <li><a href="/{{$lang}}">{{__('home.home')}}</a>
+                <nav class="menu-5 nav">
+                    <ul class="wtf-menu menurtl">
+                    <li><a href="/{{$lang}}">{{__('home.home')}}</a>
 
-                    @foreach($SectionMenu as $section)
-                    @php
-                        $url = "$lang/menu/".str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)));
-                    @endphp
-
-                <li><a href={{url("$url")}}>{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
+                        @foreach($SectionMenu as $section)
                         @php
-                            $subSectionMenu = \App\SubSection::withTranslations()->where('section_id',$section->id)->get();
+                            $url = "$lang/menu/".str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)));
                         @endphp
-                            @if(count($subSectionMenu)>0)
-                                    <ul class="submenu">
-                                        @foreach ($subSectionMenu as $subsectionmenulist)
-                                        @php
-                                            $url = "$lang/menu/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
-                                        @endphp
-                                        <li> <a href="{{url("$url")}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
-                                        @endforeach
-                                    </ul>
-                            @endif
-                    </li>
 
-                    @endforeach
-                <li><a href={{url("$lang/about")}}>{{__('home.About_company')}}</a>
-                <li><a href={{url("$lang/contact")}}>{{__('home.call_us')}}</a>
+                    <li><a href={{url("$url")}}>{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
+                            @php
+                                $subSectionMenu = \App\SubSection::withTranslations()->where('section_id',$section->id)->get();
+                            @endphp
+                                @if(count($subSectionMenu)>0)
+                                        <ul class="submenu">
+                                            @foreach ($subSectionMenu as $subsectionmenulist)
+                                            @php
+                                                $url = "$lang/menu/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
+                                            @endphp
+                                            <li> <a href="{{url("$url")}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                            @endforeach
+                                        </ul>
+                                @endif
+                        </li>
 
-                </ul>
+                        @endforeach
+                    <li><a href={{url("$lang/about")}}>{{__('home.About_company')}}</a>
+                    <li><a href={{url("$lang/contact")}}>{{__('home.call_us')}}</a>
 
-            </nav>
+                        @if($lang == "ar")
+                            <li><a href="{{url('/en')}}">EN</a></li>
+
+                        @else
+                            <li><a href="{{url('/ar')}}">AR</a></li>
+                        @endif
+                    </ul>
+
+                </nav>
 			</div>
 		</div>
 
@@ -151,15 +157,15 @@
     <div id="page">
 			<header class="header">
 				<a href="#menu"></a>
-
 			</header>
 
 			<nav id="menu">
                 <ul class="wtf-menu menurtl">
+
                     <li><a href="/{{$lang}}">{{__('home.home')}}</a>
 
                     @foreach($SectionMenu as $section)
-                <li><a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)))}}">{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
+                    <li><a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($section->getTranslatedAttribute('section_name', $lang)))}}">{{$section->getTranslatedAttribute('section_name', $lang)}}</a>
                         @php
                             $subSectionMenu = \App\SubSection::withTranslations()->where('section_id',$section->id)->get();
                         @endphp
@@ -172,6 +178,14 @@
                             @endif
                     </li>
                     @endforeach
+
+                    @if($lang == "ar")
+                        <li><a href="{{url('/en')}}">EN</a></li>
+
+                    @else
+                         <li><a href="{{url('/ar')}}">AR</a></li>
+                     @endif
+
                 </ul>
 			</nav>
 		</div>
