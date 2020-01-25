@@ -311,7 +311,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<span>Copyright © 2020 Hodhod. All rights reserved. by <a href="https://psmedia-eg.com/" target="_blanck">PSmedia</a></span>
+							<span>Copyright © 2020 Hodhod. All rights reserved. by <a href="https://psmedia-eg.com/" target="_blanck" style="text-decoration:none;color:#b50c0a">PSmedia</a></span>
 						</div>
 					</div>
 				</div>

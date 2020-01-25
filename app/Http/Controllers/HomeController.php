@@ -78,9 +78,6 @@ class HomeController extends Controller
         }
     }
 
-    public function menuDetails($lang,$menu_id){
-        \App::setLocale($lang);
-    }
 
 
     public function menubycontry($lang,$contry_id){
@@ -98,13 +95,15 @@ class HomeController extends Controller
     public function menudetails($lang,$menu_id){
 
         \App::setLocale($lang);
-        $menus = Menu::withTranslations()->where('menu_category',$contry_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
 
-        return view('front.menudetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+        $menu_details = Menu::withTranslations()->where('id',$menu_id)->first();
+
+        // dd($menu_details);
+        return view('front.menudetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menu_details'=>$menu_details]);
     }
 
     public function contact($lang){

@@ -581,7 +581,7 @@ text-transform: uppercase; font-weight: 800; float: left; border: none; margin: 
 .our-menu .menu-sec .menu-detail .food-detail span.tags{ font-size: 16px; color: #878787; display: block; margin: 14px 0 0 0; font-weight:300;}
 
 /*..... THE MENU PAGE 2 ......*/
-.our-menu .food-sec{ margin:0 0 75px 0; border: rgb(184, 175, 175) 1px solid;}
+.our-menu .food-sec{ margin:0 0 75px 0;padding: 2px; border: rgb(184, 175, 175) 1px solid;}
 .our-menu .food-sec .detail{ text-align:center; margin:40px 0 0 0;}
 .our-menu .food-sec .detail span.food-time{font-size: 16px; font-weight: 500; font-family: 'Raleway', sans-serif; text-transform: uppercase;    padding: 0 0 5px 0; margin: 0 0 0 0; display: inline-block; text-align: center;}
 .our-menu .food-sec .detail span.small-tit{ display:block; font-size:18px; color:#999999; margin: 24px 0 0 0;}

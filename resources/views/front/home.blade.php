@@ -72,7 +72,7 @@
                         <span>{{__('home.Discover')}}</span>
                             <h1>{{__('home.our_story')}}</h1>
                         </div>
-                        <p>{!! setting("story.$lang") !!}.</p>
+                        <p>{!! str_limit(setting("story.$lang") , $limit = 300, $end = '') !!}.</p>
                     <a href={{url("/$lang/about")}} class="full-story">{{__("home.view_full_story")}}</a>
                         </div>
                     </div>

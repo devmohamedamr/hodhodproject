@@ -21,13 +21,14 @@
                     @foreach($menus as $menu)
 					<div class="col-md-4">
 						<div class="food-sec">
-							<img src="{{asset("storage/$menu->menu_img")}}" alt="">
-							<div class="detail">
+                        <a href="{{url("$lang/menudetails/$menu->id")}}"><img src="{{asset("storage/$menu->menu_img")}}" alt="">
+                            </a>
+                            <div class="detail">
 								{{-- <span class="food-time">DINNER</span> --}}
 								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
-                                <button style="margin-bottom: 10px;" type="button" data-toggle="modal" data-target="#menusection" class="btn btn-danger">{{__('home.selectmenu')}}</button>
+                                <button style="margin-bottom: 25px;" type="button" data-toggle="modal" data-target="#menusection" class="btn btn-danger">{{__('home.selectmenu')}}</button>
                             </div>
 						</div>
                     </div>
