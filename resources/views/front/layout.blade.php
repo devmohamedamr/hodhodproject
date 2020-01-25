@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<link rel="icon" type="image/png" href="images/favicon-pearl.png">
+    <link rel="icon" type="image/png" href="{{asset("front/images/favicon-pearl.png ")}}">
 
     <link href="{{asset("front/css/pearl-restaurant_$lang.css")}}" rel="stylesheet" type="text/css">
 
@@ -96,13 +96,13 @@
 
 
    <!--Start Header-->
-	<div id="header-1 container">
+	<div id="">
        <header class="header-two ">
-		   <div class="">
+		   <div class="container">
 	   		<a href="/{{$lang}}"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
 			<a href="/{{$lang}}"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
 
-			<div class="cont-right ">
+			<div class="">
 
                 <nav class="menu-5 nav">
                     <ul class="wtf-menu menurtl">

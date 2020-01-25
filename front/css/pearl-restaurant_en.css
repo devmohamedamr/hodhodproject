@@ -216,8 +216,7 @@ img:hover {transition: background-color 0.5s ease; }
 .header-two .logo-dark{ display:none;}
 .header-two .nav{ float:left;}
 .header-two .nav ul li{ float:left;}
-.header-two .nav ul li a{ color: #fff; text-transform: uppercase; font-weight: 400; font-size: 14px; font-family: 'Raleway', sans-serif; padding: 0px 0;
- margin: 0 14px; line-height: 102px;}
+.header-two .nav ul li a{ line-height: 80px; color: #fff; text-transform: uppercase; font-weight: 500; font-size: 12px; font-family: 'Raleway', sans-serif; padding: 0px 5px;}
 .header-two .nav ul li.select-item a{ color: #FFFFFF; border-bottom: solid 1px #fff;}
 .header-two .get-touch{ float:right; margin:38px 0 0 0;}
 .header-two .get-touch li{ float:left;}
@@ -582,7 +581,7 @@ text-transform: uppercase; font-weight: 800; float: left; border: none; margin: 
 .our-menu .menu-sec .menu-detail .food-detail span.tags{ font-size: 16px; color: #878787; display: block; margin: 14px 0 0 0; font-weight:300;}
 
 /*..... THE MENU PAGE 2 ......*/
-.our-menu .food-sec{ margin:0 0 75px 0;}
+.our-menu .food-sec{ margin:0 0 75px 0; border: rgb(184, 175, 175) 1px solid;}
 .our-menu .food-sec .detail{ text-align:center; margin:40px 0 0 0;}
 .our-menu .food-sec .detail span.food-time{font-size: 16px; font-weight: 500; font-family: 'Raleway', sans-serif; text-transform: uppercase;    padding: 0 0 5px 0; margin: 0 0 0 0; display: inline-block; text-align: center;}
 .our-menu .food-sec .detail span.small-tit{ display:block; font-size:18px; color:#999999; margin: 24px 0 0 0;}

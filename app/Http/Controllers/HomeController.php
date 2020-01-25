@@ -94,6 +94,19 @@ class HomeController extends Controller
         return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
     }
 
+
+    public function menudetails($lang,$menu_id){
+
+        \App::setLocale($lang);
+        $menus = Menu::withTranslations()->where('menu_category',$contry_id)->get();
+        $menusectoion = MenuSection::all();
+        $SectionMenu = Section::withTranslations()->get();
+
+        $sliders = Slider::withTranslations()->first();
+
+        return view('front.menudetails',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+    }
+
     public function contact($lang){
         \App::setLocale($lang);
         $SectionMenu = Section::withTranslations()->get();
