@@ -272,7 +272,7 @@
                    <div class="detail">
                        <img src="images/news-cheff1.jpg" alt="">
                    <h5><a href="{{url("$lang/blog/$blog->id")}}">{{$blog->getTranslatedAttribute('blog_title', $lang)}}</a></h5>
-                   <p>{{\Illuminate\Support\Str::limit($clerestring, 150, $end='...')}}</p>
+                   <p>{{\Illuminate\Support\Str::limit($clerestring, 30, $end='...')}}</p>
                        <span><i class="icon-clock"></i>{{$blog->created_at}}</span>
                    </div>
                </div>

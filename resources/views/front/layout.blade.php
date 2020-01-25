@@ -224,7 +224,7 @@
 				<div class="col-md-12">
 					<div class="main-title">
                     <span>{{__('home.Short_Info')}}</span>
-						<h1>{{__('home.GET_IN_TOUCH')}}</h1>
+						{{-- <h1>{{__('home.GET_IN_TOUCH')}}</h1> --}}
 					</div>
 				</div>
 				</div>

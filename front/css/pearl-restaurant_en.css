@@ -269,7 +269,7 @@ img:hover {transition: background-color 0.5s ease; }
 /*..... MAIN TITLE ......*/
 
 .main-title{ text-align:center;}
-.main-title span{ font-size:100px; font-family: 'Tangerine', cursive;}
+.main-title span{ font-size:60px; font-family: 'Tangerine', cursive;}
 .main-title h1{ background: url(../images/heading-dark.png) no-repeat center 80px; letter-spacing: 4px; padding: 0 0 70px 0; margin: -6px 0 0 0;}
 .main-title p{width: 80%; display: inline-block;}
 

@@ -61,6 +61,7 @@ class HomeController extends Controller
             $section_id = $section_by_section_name['foreign_key'];
         }
 
+        // dd($Section_name);
         $seobysection = Seo::withTranslations()->where('page_id',$section_id)->first();
         // dd($section_id );
         $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
@@ -70,10 +71,10 @@ class HomeController extends Controller
         $sliders = Slider::withTranslations()->first();
 
         if($section_id == 18 || $section_id == 19){
-            return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection]);
+            return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection,'Section_name'=>$Section_name]);
 
         }else{
-            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection]);
+            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection,'Section_name'=>$Section_name]);
 
         }
     }
@@ -82,13 +83,16 @@ class HomeController extends Controller
 
     public function menubycontry($lang,$contry_id){
         \App::setLocale($lang);
+        $country = MenuSection::withTranslations()->where('id',$contry_id)->first();
+        $Section_name = $country->section_title;
+        // dd($Section_name);
         $menus = Menu::withTranslations()->where('menu_category',$contry_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();
 
         $sliders = Slider::withTranslations()->first();
 
-        return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus]);
+        return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'Section_name'=>$Section_name]);
     }
 
 

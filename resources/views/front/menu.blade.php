@@ -7,6 +7,11 @@
 		<!--Start The Menu-->
 		<div class="our-menu">
 
+            <div class="main-title">
+                {{-- <span>{{__('home.Latest_Posts')}}</span> --}}
+                <h1>{{$Section_name}}</h1>
+            </div>
+
 			<div class="container p-4">
 				<div class="row">
                     @foreach($menus as $menu)
@@ -20,6 +25,8 @@
 								<h6>{{$menu->getTranslatedAttribute('menu_title', $lang)}}</h6>
 								<p>{!! $menu->getTranslatedAttribute('menu_description', $lang) !!}</p>
                                 <button style="margin-bottom: 25px;" type="button" data-toggle="modal" data-target="#menusection" class="btn btn-danger">{{__('home.selectmenu')}}</button>
+                                <a href="{{url("$lang/menudetails/$menu->id")}}" style="margin-bottom: 25px;"  class="btn btn-danger">{{__('home.menu_details')}}</a>
+
                             </div>
 						</div>
                     </div>
