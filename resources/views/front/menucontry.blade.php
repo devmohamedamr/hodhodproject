@@ -13,7 +13,7 @@
 			<div class="container p-4">
                 <div class="row justify-content-md-center mb-5">
                     @foreach($menusection as $section)
-                    <div class="col-md-1 mr-5">
+                    <div class="col-md-1 mr-5" style="text-align: center;">
                         <a href="{{url("/$lang/menucontry/$section->id")}}">
                             <img class="roundcountry" src="{{asset('storage/'.$section->menu_img)}}">
                         </a>

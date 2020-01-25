@@ -97,7 +97,7 @@
 
    <!--Start Header-->
 	<div id="">
-       <header class="header-two ">
+       <header class="header-two">
 		   <div class="container">
 	   		<a href="/{{$lang}}"><img class="logo2" src="{{asset('storage/'.setting('site.logo'))}}" alt=""></a>
 			<a href="/{{$lang}}"><img class="logo-dark" src="{{asset('storage/'.setting('site.dark'))}}" alt=""></a>
@@ -304,8 +304,6 @@
 				</div>
 
 			</div>
-
-
 
 			<div class="copyrights">
 				<div class="container">

@@ -3,7 +3,10 @@
 
       <!--Start Content-->
 	<div class="content">
-
+        <div class="main-title">
+            {{-- <span>{{__('home.Latest_Posts')}}</span> --}}
+            <h1>{!! $menu_details->getTranslatedAttribute('menu_title',$lang) !!}</h1>
+        </div>
 		<!--Start Shop Detail-->
 			<div class="shop-detail">
 				<div class="container">
