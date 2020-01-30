@@ -22,4 +22,8 @@ class Menu extends Model
         return $this->belongsToMany(MenuSection::class);
 
     }
+
+    public function menuType(){
+        return $this->belongsToMany(MenuType::class);
+    }
 }

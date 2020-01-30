@@ -13,8 +13,7 @@ class MenuSection extends Model
     use Translatable;
     protected $translatable = ['section_title', 'section_description'];
 
-    // public function languageIso(){
-    //     return $this->belongsToMany(language::class);
-
+    // public function menuId(){
+    //     return $this->belongsToMany(SubSection::class);
     // }
 }

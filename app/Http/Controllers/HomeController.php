@@ -13,6 +13,7 @@ use App\SubSection;
 use App\translations;
 use App\Seo;
 use App\Testimonial;
+use App\MenuType;
 class HomeController extends Controller
 {
     public function index($lang){
@@ -59,11 +60,10 @@ class HomeController extends Controller
         }else{
             $section_by_section_name = translations::where('table_name','sub_section')->where('value',$Section_name)->first();
             $section_id = $section_by_section_name['foreign_key'];
+
         }
 
-        // dd($Section_name);
         $seobysection = Seo::withTranslations()->where('page_id',$section_id)->first();
-        // dd($section_id );
         $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();
@@ -71,12 +71,27 @@ class HomeController extends Controller
         $sliders = Slider::withTranslations()->first();
 
         if($section_id == 18 || $section_id == 19){
+
             return view('front.menucontry',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection,'Section_name'=>$Section_name]);
+
+        }elseif($section_id == 15 || $section_id == 22){
+
+            return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection,'Section_name'=>$Section_name]);
 
         }else{
             return view('front.menu',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menusection'=>$menusectoion,'menus'=>$menus,'seobysection'=>$seobysection,'Section_name'=>$Section_name]);
-
         }
+    }
+
+    public function menuBytype($lang,$menu){
+        \App::setLocale($lang);
+
+        $menus = MenuType::withTranslations()->get();
+        $SectionMenu = Section::withTranslations()->get();
+        $sliders = Slider::withTranslations()->first();
+
+        return view('front.menutype',['lang'=>$lang,'sliders'=>$sliders,'SectionMenu'=>$SectionMenu,'menus'=>$menus,'menu_name'=>$menu]);
+
     }
 
 

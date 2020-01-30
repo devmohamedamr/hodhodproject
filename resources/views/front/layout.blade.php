@@ -121,7 +121,11 @@
                                         <ul class="submenu">
                                             @foreach ($subSectionMenu as $subsectionmenulist)
                                             @php
-                                                $url = "$lang/menu/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
+                                                if(in_array($subsectionmenulist->id,[15,16,17,18,19])){
+                                                    $url = "$lang/menutype/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
+                                                }else{
+                                                    $url = "$lang/menu/".str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)));
+                                                }
                                             @endphp
                                             <li class=""> <a href="{{url("$url")}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
                                             @endforeach
@@ -171,7 +175,12 @@
                             @if(count($subSectionMenu)>0)
                                     <ul class="submenu">
                                         @foreach ($subSectionMenu as $subsectionmenulist)
+
+                                            @if(in_array($subsectionmenulist->id,[15,16,17,18,19]))
+                                            <li> <a href="{{$lang}}/menutype/{{str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)))}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                            @else
                                             <li> <a href="{{$lang}}/menu/{{str_replace(' ', '-', strtolower($subsectionmenulist->getTranslatedAttribute('section_name', $lang)))}}">{{$subsectionmenulist->getTranslatedAttribute('section_name', $lang)}}</a> </li>
+                                            @endif
                                         @endforeach
                                     </ul>
                             @endif
