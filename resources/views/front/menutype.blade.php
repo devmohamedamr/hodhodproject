@@ -16,11 +16,9 @@
                     @foreach($menus as $menu)
 					<div class="col-md-4">
 						<div class="food-sec">
-                            <a href="{{url("$lang/menu/$menu/$menu->id")}}"><img width="300px" height="300px" src="{{asset("storage/$menu->img")}}" alt="">
+                            <a href="{{url("$lang/menu/$menuname/$menu->id")}}"><img width="300px" height="300px" src="{{asset("storage/$menu->img")}}" alt="">
                             </a>
                             <div class="detail">
-								{{-- <span class="food-time">DINNER</span> --}}
-								{{-- <span class="small-tit">Fantastic Bourbon</span> --}}
 								<h6>{{$menu->getTranslatedAttribute('title', $lang)}}</h6>
                             </div>
 						</div>
