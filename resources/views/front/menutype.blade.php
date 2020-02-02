@@ -31,11 +31,11 @@
 				<div class="row">
                     @foreach($menus as $menu)
 					<div class="col-md-4">
-						<div class="food-sec">
-                            <a href="{{url("$lang/menu/$menuname/$menu->id")}}"><img width="300px" height="300px" src="{{asset("storage/$menu->img")}}" alt="">
+                    <div class="food-sec @if($menu->id == 1) golden @elseif($menu->id == 2 ) sliver @else platinum @endif ">
+                            <a href="{{url("$lang/menu/$menuname/$menu->id")}}"><img width="300px" height="238px" src="{{asset("storage/$menu->img")}}" alt="">
                             </a>
                             <div class="detail">
-								<h6>{{$menu->getTranslatedAttribute('title', $lang)}}</h6>
+								{{-- <h6>{{$menu->getTranslatedAttribute('title', $lang)}}</h6> --}}
                             </div>
 						</div>
                     </div>
