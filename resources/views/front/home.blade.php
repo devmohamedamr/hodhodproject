@@ -1,8 +1,153 @@
 @extends('front.layout')
 @section('content')
 
-<div class="content">
+<div class="tp-banner-container">
+    <div class="tp-banner" >
+        <ul>
+    <!-- SLIDE  -->
 
+
+    <li data-transition="fade" data-slotamount="7" data-masterspeed="500"  data-saveperformance="on"  data-title="Intro Slide">
+
+    <img src="{{asset('front/images/slides/banenr-img1.jpg')}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+
+    <div class="tp-caption arrowicon customin  rs-parallaxlevel-10"
+        data-x="center"
+        data-y="380"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="850"
+        data-start="1500"
+        data-easing="Power3.easeInOut"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        data-endspeed="1000"
+        style=""><img src="{{asset('front/images/slides/flower.png')}}" alt="" >
+    </div>
+
+
+    <div class="tp-caption grey_heavy_72 customin tp-resizeme rs-parallaxlevel-10"
+        data-x="center"
+        data-y="456"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="850"
+        data-start="2500"
+        data-easing="Power3.easeInOut"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        data-endspeed="1000"
+        style="font-size:72px; z-index: 5;font-family: 'hanimation'; max-width: auto; max-height: auto; white-space: nowrap;">{{setting("slider.slider1_$lang")}}
+    </div>
+
+
+</li>
+
+
+<li data-transition="fade" data-slotamount="7" data-masterspeed="500"  data-saveperformance="on"  data-title="Intro Slide">
+
+    <img src="{{asset('front/images/slides/banenr-img2.jpg')}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+
+    <div class="tp-caption grey_heavy_72 customin tp-resizeme rs-parallaxlevel-10"
+        data-x="center"
+        data-y="456"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="850"
+        data-start="2500"
+        data-easing="Power3.easeInOut"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        data-endspeed="1000"
+        style="font-size:72px; z-index: 5;font-family: 'hanimation'; max-width: auto; max-height: auto; white-space: nowrap;">{{setting("slider.slider2_$lang")}}
+    </div>
+
+
+{{--
+    <div class="tp-caption grey_heavy_72 customin tp-resizeme rs-parallaxlevel-10"
+        data-x="0"
+        data-y="468"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="500"
+        data-start="3500"
+        data-easing="Power3.easeInOut"
+        data-splitin="chars"
+        data-splitout="none"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        style="font-size:28px; z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;"><div style="text-align:left;">افضل الاطباق لدينا</div>
+    </div> --}}
+
+
+
+
+</li>
+
+
+<li data-transition="fade" data-slotamount="7" data-masterspeed="500"  data-saveperformance="on"  data-title="Intro Slide">
+
+    <img src="{{asset('front/images/slides/banenr-img3.jpg')}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+
+    <div class="tp-caption arrowicon customin  rs-parallaxlevel-10"
+        data-x="center"
+        data-y="330"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="850"
+        data-start="1500"
+        data-easing="Power3.easeInOut"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        data-endspeed="1000"
+        style=""><img src="images/slides/flower.png" alt="" >
+    </div>
+
+
+    <div class="tp-caption grey_heavy_72 customin tp-resizeme rs-parallaxlevel-10"
+        data-x="center"
+        data-y="456"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="850"
+        data-start="2500"
+        data-easing="Power3.easeInOut"
+        data-elementdelay="0.1"
+        data-endelementdelay="0.1"
+        data-endspeed="1000"
+        style="font-size:72px; z-index: 5; max-width: auto;font-family: 'hanimation'; max-height: auto; white-space: nowrap;">{{setting("slider.slider3_$lang")}}
+    </div>
+
+
+
+    <div class="tp-caption grey_regular_18 customin tp-resizeme rs-parallaxlevel-0"
+        data-x="center"
+        data-y="580"
+        data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+        data-speed="800"
+        data-start="4200"
+        data-easing="Power3.easeInOut"
+        data-splitin="none"
+        data-splitout="none"
+        data-elementdelay="0.05"
+        data-endelementdelay="0.1"
+        style="z-index: 9; max-width: auto; max-height: auto;font-family: 'hanimation'; white-space: nowrap;"><div style="text-align:left; ">
+        </div>
+    </div>
+
+
+</li>
+
+
+
+
+
+</ul>
+<div class="tp-bannertimer"></div>	</div>
+<div class="wave"></div>
+</div>
+
+<div class="content">
 
     <!--Start Services-->
     <div class="services">

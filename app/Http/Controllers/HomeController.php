@@ -52,6 +52,7 @@ class HomeController extends Controller
     public function menuBySection($lang,$Section_id,$type = ''){
         \App::setLocale($lang);
 
+        // echo $type;die;
         $Section_name =  str_replace('-', ' ', strtolower($Section_id));
         if($lang == 'ar'){
             $section_by_section_name = SubSection::withTranslations()->where('section_name',$Section_name)->first();
@@ -64,10 +65,11 @@ class HomeController extends Controller
         }
 
         $seobysection = Seo::withTranslations()->where('page_id',$section_id)->first();
-        $menus = Menu::withTranslations()->where('menu_section',$section_id)->get();
+        $menus = Menu::withTranslations()->where([['menu_section',$section_id],['menu_type',$type]])->get();
         $menusectoion = MenuSection::all();
         $SectionMenu = Section::withTranslations()->get();
 
+        // dd($menus);
         $sliders = Slider::withTranslations()->first();
 
         if($section_id == 18 || $section_id == 19){
@@ -144,8 +146,13 @@ class HomeController extends Controller
     }
 
     public function contactsend(Request $request){
-        dd($request);
+        // dd($request);
 
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+        ]);
 
     \Mail::send('emails.contactus',
         array(

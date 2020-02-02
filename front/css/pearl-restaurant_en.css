@@ -297,7 +297,7 @@ img:hover {transition: background-color 0.5s ease; }
 
 /*..... SERVICES ......*/
 
-.services{ padding:120px 0;}
+.services{ padding-bottom:120px;}
 .services .serv-main-sec{ margin:85px 0 0 0;}
 .services .service-sec-top-bg{ background:url(../images/service-top.png) no-repeat; height: 32px; background-size: 100%;}
 .services .service-sec-bottom-bg{ background:url(../images/service-bottom.png) no-repeat; height: 32px; background-size: 100%;}

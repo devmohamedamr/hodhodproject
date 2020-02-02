@@ -203,7 +203,7 @@
 
 
 	<!--Start Sub Banner-->
-    <div class="sub-banner" style="height: 600px;color: wheat">
+    {{-- <div class="sub-banner" style="height: 600px;color: wheat">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -216,8 +216,13 @@
         <img src="{{asset('storage/'.$sliders->slider_img)}}" width="100%" height="600px">
         </div>
    </div>
-   <div class="wave"></div>
+   <div class="wave"></div> --}}
 
+   	<!--Start Banner-->
+
+
+
+   <!--End Banner-->
    <!--End Sub Banner-->
 
 
