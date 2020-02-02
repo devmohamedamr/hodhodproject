@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use Illuminate\Support\Facades\DB;
+
 class orderController extends Controller
 {
 
     // back function to get all orders
     public function index(){
-        $orders = Order::where('order',0)->get();
+
+        $orders = DB::table('order')
+            ->join('menu', 'menu.id', '=', 'order.menu')
+            ->select('order.*', 'menu.menu_title')
+            ->where('order',0)
+            ->get();
+        // $orders = Order::where('order',0)->get();
         return view('back.orders',['orders'=>$orders]);
     }
 

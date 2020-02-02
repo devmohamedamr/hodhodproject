@@ -29,8 +29,8 @@
           <td>{{$order->user_address}}</td>
           <td>{{$order->user_phone}}</td>
           <td>{{$order->user_email}}</td>
-          <td>{{$order->service}}</td>
-          <td>{{$order->menu}}</td>
+          <td>@if($order->service == 1) خدمة @elseif($order->service == 2) قصور @elseif($order->service == 3) قاعات احتفالات @elseif($order->service == 4) فنادق @elseif($order->service == 5) استراحات  @endif</td>
+          <td>{{$order->menu_title}}</td>
           <td>{{$order->created_at}}</td>
         <td>@if($order->order == 0) <span class="label label-danger">Waiting</span> @else <span class="label label-primary">done</span> @endif</td>
           <td><a class="btn btn-success" href="/order/done/{{$order->id}}">Done</a></td>
